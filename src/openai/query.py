@@ -1,6 +1,12 @@
 from openai import AzureOpenAI
+from dotenv import load_dotenv
+import os
 
-OPENAI_API_KEY = ""
+load_dotenv()
+api_key = os.getenv('api_key')
+api_version = os.getenv('api_version')
+azure_endpoint = os.getenv('azure_endpoint')
+
 '''
     messages=[
         {"role": "system", "content": "You're a helpful assistant."},
@@ -13,13 +19,13 @@ OPENAI_API_KEY = ""
 def completion_with_backoff_mcopenai(**kwargs):
     client = AzureOpenAI(
         # https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versioning
-        api_version="2023-12-01-preview",
+        api_version=api_version,
         # https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource
-        azure_endpoint="https://0212openai.openai.azure.com/",
-        api_key=OPENAI_API_KEY,
+        azure_endpoint=azure_endpoint,
+        api_key=api_key,
     )
     result = client.chat.completions.create(
-        model="gpt4-azure-0212",
+        model="gpt-4o",
         **kwargs,
     )
     return result
