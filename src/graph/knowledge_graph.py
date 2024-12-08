@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer, util
 class SemanticGraph:
     def __init__(self):
         self.graph = nx.DiGraph()
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')  # 加载预训练模型
+        self.model = SentenceTransformer('all-MiniLM-L6-v2')
     
     def add_node(self, node_name):
         embedding = self.model.encode(node_name)
