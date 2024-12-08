@@ -1,58 +1,49 @@
 import networkx as nx
 from sentence_transformers import SentenceTransformer, util
 
-class SemanticGraph:
-    def __init__(self):
+class SemanticKnowledgeGraph:
+    def __init__(self, model_name='all-MiniLM-L6-v2', similarity_threshold=0.8):
         self.graph = nx.DiGraph()
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.model = SentenceTransformer(model_name)
+        self.similarity_threshold = similarity_threshold
     
-    def add_node(self, node_name):
-        embedding = self.model.encode(node_name)
-        self.graph.add_node(node_name, embedding=embedding)
+    def add_node(self, node):
+        if node not in self.graph:
+            self.graph.add_node(node)
     
     def add_edge(self, node1, node2, relation):
-        embedding = self.model.encode(relation)
-        self.graph.add_edge(node1, node2, relation=relation, relation_embedding=embedding)
-    
-    def query(self, node1=None, node2=None, relation=None):
-        query_node1_emb = self.model.encode(node1) if node1 else None
-        query_node2_emb = self.model.encode(node2) if node2 else None
-        query_relation_emb = self.model.encode(relation) if relation else None
+        self.add_node(node1)
+        self.add_node(node2)
+        
+        new_relation_emb = self.model.encode(relation)
+        
+        if self.graph.has_edge(node1, node2):
+            existing_relation = self.graph[node1][node2].get('relation', None)
+            existing_relation_emb = self.graph[node1][node2]['relation_embedding']
 
-        best_match = None
-        best_score = -1
+            sim = util.cos_sim(new_relation_emb, existing_relation_emb).item()
+            
+            if sim < self.similarity_threshold:
+                old_rel = existing_relation
+                self.graph[node1][node2]['relation'] = relation
+                self.graph[node1][node2]['relation_embedding'] = new_relation_emb
+                print(f"Edge ({node1}, {node2}) relation updated from '{old_rel}' to '{relation}' due to semantic difference (similarity={sim:.2f}).")
+            else:
+                print(f"Edge ({node1}, {node2}) has a semantically similar relation. No update needed (similarity={sim:.2f}).")
+        else:
+            self.graph.add_edge(node1, node2, relation=relation, relation_embedding=new_relation_emb)
+            print(f"Edge ({node1}, {node2}) with relation '{relation}' added.")
 
-        for n1, n2, attrs in self.graph.edges(data=True):
-            score = 0
+    def query_edge(self, node1, node2):
+        if self.graph.has_edge(node1, node2):
+            return self.graph[node1][node2]['relation']
+        else:
+            return None
 
-            # Compare node1
-            if query_node1_emb is not None:
-                score += util.cos_sim(query_node1_emb, self.graph.nodes[n1]['embedding']).item()
+if __name__ == "__main__":   
+    kg = SemanticKnowledgeGraph()
 
-            # Compare node2
-            if query_node2_emb is not None:
-                score += util.cos_sim(query_node2_emb, self.graph.nodes[n2]['embedding']).item()
-
-            # Compare relation
-            if query_relation_emb is not None:
-                score += util.cos_sim(query_relation_emb, attrs['relation_embedding']).item()
-
-            # Update best match
-            if score > best_score:
-                best_score = score
-                best_match = (n1, n2, attrs['relation'])
-
-        return best_match, best_score
-
-if __name__ == "__main__":
-    g = SemanticGraph()
-    g.add_node("Person A")
-    g.add_node("Person B")
-    g.add_node("Person C")
-
-    g.add_edge("Person A", "Person B", "is a friend of")
-    g.add_edge("Person B", "Person C", "works with")
-    g.add_edge("Person A", "Person C", "is a family member of")
-
-    query_result, score = g.query(node1="Person A", relation="friendship")
-    print(f"Best Match: {query_result}, Score: {score:.4f}")
+    kg.add_edge("A", "B", "works with")
+    kg.add_edge("A", "B", "collaborates alongside")
+    kg.add_edge("A", "B", "is a competitor of")
+    print("Current relation between A and B:", kg.query_edge("A", "B"))
