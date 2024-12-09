@@ -3,22 +3,25 @@ import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
 
-persona = "You are an assistant who extract information in sentences. Extract the triplets which contains the knowledge of the sentence.\nHere is one example. \n"
-demonstration = "For sentence: Bill Gates and Paul Allen are the founders of Microsoft, your output should be,\n (Bill Gates, found, Microsoft),(Paul Allen, found, Microsoft). \n"
-requirement = "Your response triplets should strictly follow the format: (Subject, Relation, Subject). Note that a sentence may include information of multiple triplets, and you need to divide them with comma and no extra space in your response. Do not include any other words except for the triplets in your response."
-
-user = "Here is the sentence for you to extract triplets: "
-# memory = "Alice and Bob married last year, and they will have a baby next month."
-
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
+    sys_trip = """
+    You are an assistant who extract information in daily dialog sentences. Extract the triplets which contains the knowledge of the sentence.\nHere are two examples.
+
+    For sentence: "Jack: Hi! I just passed my final exam.", the extracted triplets should be ("Jack", "passed", "final exam")
+    For sentence: "Alice: Hi Bob, do you want to come to my 24 year old birthday party tomorrow?", the extracted triplets should be ("Bob", "invited", "Alice's birthday party"),("Alice", "24", "age")
+
+    Your response triplets should strictly follow the format: (Subject, Relation, Subject). Note that a sentence may include information of multiple triplets, and you need to divide them with comma and no extra space in your response. Do not include any other words except for the triplets in your response.
+    """
+
+    user = "Here is the sentence for you to extract triplets: "
 
     messages = [
-        {"role": "system", "content": persona + demonstration + requirement},
+        {"role": "system", "content": sys_trip},
         {"role": "system", "content": user + memory}
     ]
 
-    response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
+    response = completion_with_backoff_mcopenai(messages = messages, temperature = 0.5, max_tokens=50).choices[0].message.content
 
     return response
 
@@ -50,9 +53,10 @@ def extract_triplets(input_str):
     # Find all occurrences of triplets enclosed in parentheses
     # This will capture strings like: I, focus on, contemporary dance teaching
     matches = re.findall(r'\(([^)]+)\)', input_str)
-
+    
     if not matches:
-        print("Warning: No triplets found in the input string.")
+        
+        print(f"Warning: No triplets found in the input string. {input_str}")
         return []
 
     triplets = []
@@ -64,9 +68,9 @@ def extract_triplets(input_str):
         else:
             # If any captured group doesn't split into exactly three parts,
             # it doesn't match the expected triplet format.
-            print("Warning: Invalid triplet format encountered.")
+            print(f"Warning: Invalid triplet format encountered. {parts}")
             return []
-
+    print(triplets)
     return triplets
 
 def parse_llm_judge_response(response: str) -> bool:
@@ -86,18 +90,21 @@ def main():
 
     # Build Graph
     for entry in data:
+        kg = SemanticKnowledgeGraph()
         memories = entry.get("memories", {})
         queries = entry.get("queries", [])
 
         for date, conversation_list in memories.items():
             for message in conversation_list:
                 for person, text in message.items():
-                    extracted_mems = extract_triplets(get_triplet(text))
+                    extracted_mems = extract_triplets(get_triplet(f"{person}: {text}"))
                     for mem in extracted_mems:
                         res = kg.add_edge(mem[0], mem[2], mem[1], False)
                         if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
                             kg.add_edge(mem[0], mem[2], mem[1], True)
-    
+        
+        kg.draw()
+        # kg.dump()
         # TODO: Retrieve
         print("Queries:")
         for q in queries:
