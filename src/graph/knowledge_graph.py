@@ -35,7 +35,7 @@ class SemanticKnowledgeGraph:
         else:
             self.graph.add_edge(node1, node2, relation=relation, relation_embedding=relation_embedding)
             return {
-                'updated': False,
+                'conflict': False,
                 'message': f"Added edge ({node1}, {node2}) with relation '{relation}'",
             }
 
