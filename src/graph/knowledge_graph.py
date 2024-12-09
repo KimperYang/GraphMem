@@ -1,6 +1,6 @@
 import networkx as nx
 from sentence_transformers import SentenceTransformer, util
-
+import matplotlib.pyplot as plt
 class SemanticKnowledgeGraph:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.graph = nx.DiGraph()
@@ -91,7 +91,14 @@ class SemanticKnowledgeGraph:
                 return [(rel, total_score)]
             else:
                 return []
-
+    
+    def draw(self,file_name="graph.png"):
+        pos = nx.spring_layout(self.graph)
+        nx.draw(self.graph, pos, with_labels=True)
+        edge_labels = nx.get_edge_attributes(self.graph, 'relation')
+        nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
+        plt.savefig(file_name)
+    
 if __name__ == "__main__":
     kg = SemanticKnowledgeGraph()
     kg.add_edge("A", "B", "cooperate")
@@ -110,3 +117,4 @@ if __name__ == "__main__":
     # Given node C and relation "compete", find starting nodes
     nodes = kg.query(node1=None, node2="C", relation="compete")
     print("Nodes that compete with C:", nodes)
+    kg.draw()
