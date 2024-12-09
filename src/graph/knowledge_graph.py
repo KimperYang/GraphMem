@@ -27,12 +27,24 @@ class SemanticKnowledgeGraph:
                 old_rel = existing_relation
                 self.graph[node1][node2]['relation'] = relation
                 self.graph[node1][node2]['relation_embedding'] = new_relation_emb
-                print(f"Edge ({node1}, {node2}) relation updated from '{old_rel}' to '{relation}' due to semantic difference (similarity={sim:.2f}).")
+                return {
+                    'updated': True,
+                    'message': f"Edge ({node1}, {node2}) relation updated from '{old_rel}' to '{relation}'",
+                    'similarity': sim
+                }
             else:
-                print(f"Edge ({node1}, {node2}) has a semantically similar relation. No update needed (similarity={sim:.2f}).")
+                return {
+                    'updated': False,
+                    'message': f"Edge ({node1}, {node2}) has a semantically similar relation",
+                    'similarity': sim
+                }
         else:
             self.graph.add_edge(node1, node2, relation=relation, relation_embedding=new_relation_emb)
-            print(f"Edge ({node1}, {node2}) with relation '{relation}' added.")
+            return {
+                'updated': False,
+                'message': f"Edge ({node1}, {node2}) with relation '{relation}' added",
+                'similarity': 1.0
+            }
 
     def query_edge(self, node1, node2):
         if self.graph.has_edge(node1, node2):
