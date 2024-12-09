@@ -2,16 +2,15 @@ import networkx as nx
 from sentence_transformers import SentenceTransformer, util
 
 class SemanticKnowledgeGraph:
-    def __init__(self, model_name='all-MiniLM-L6-v2', similarity_threshold=0.8):
+    def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.graph = nx.DiGraph()
         self.model = SentenceTransformer(model_name)
-        self.similarity_threshold = similarity_threshold
     
     def add_node(self, node):
         if node not in self.graph:
             self.graph.add_node(node)
     
-    def add_edge(self, node1, node2, relation):
+    def add_edge(self, node1, node2, relation, overwrite=False):
         self.add_node(node1)
         self.add_node(node2)
         
@@ -19,38 +18,55 @@ class SemanticKnowledgeGraph:
         
         if self.graph.has_edge(node1, node2):
             existing_relation = self.graph[node1][node2].get('relation', None)
-            existing_relation_emb = self.graph[node1][node2]['relation_embedding']
-
-            sim = util.cos_sim(new_relation_emb, existing_relation_emb).item()
-            
-            if sim < self.similarity_threshold:
-                old_rel = existing_relation
-                self.graph[node1][node2]['relation'] = relation
-                self.graph[node1][node2]['relation_embedding'] = new_relation_emb
+            if existing_relation == relation:
                 return {
-                    'updated': True,
-                    'message': f"Edge ({node1}, {node2}) relation updated from '{old_rel}' to '{relation}'",
-                    'similarity': sim
+                    'conflict': True,
+                    'message': f"Edge ({node1}, {node2}) with relation '{relation}' already exists",
                 }
+                
             else:
+                self.graph.add_edge(node1, node2, relation=relation, relation_embedding=new_relation_emb)
                 return {
-                    'updated': False,
-                    'message': f"Edge ({node1}, {node2}) has a semantically similar relation",
-                    'similarity': sim
+                    'conflict': False,
+                    'message': f"Edge ({node1}, {node2}) with relation '{relation}' added",
                 }
         else:
             self.graph.add_edge(node1, node2, relation=relation, relation_embedding=new_relation_emb)
             return {
                 'updated': False,
                 'message': f"Edge ({node1}, {node2}) with relation '{relation}' added",
-                'similarity': 1.0
             }
 
-    def query_edge(self, node1, node2):
-        if self.graph.has_edge(node1, node2):
-            return self.graph[node1][node2]['relation']
-        else:
-            return None
+    def query(self, node1=None, node2=None, relation=None, top_k=1):
+        query_node1_emb = self.model.encode(node1) if node1 else None
+        query_node2_emb = self.model.encode(node2) if node2 else None
+        query_relation_emb = self.model.encode(relation) if relation else None
+
+        matches = []
+        scores = []
+
+        for n1, n2, attrs in self.graph.edges(data=True):
+            score = 0
+
+            # Compare node1
+            if query_node1_emb is not None:
+                score += util.cos_sim(query_node1_emb, self.graph.nodes[n1]['embedding']).item()
+
+            # Compare node2
+            if query_node2_emb is not None:
+                score += util.cos_sim(query_node2_emb, self.graph.nodes[n2]['embedding']).item()
+
+            # Compare relation
+            if query_relation_emb is not None:
+                score += util.cos_sim(query_relation_emb, attrs['relation_embedding']).item()
+
+            matches.append((n1, n2))
+            scores.append(score)
+
+        top_k_matches = [matches[i] for i in sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]]
+        top_k_scores = [scores[i] for i in sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]]
+        
+        return top_k_matches, top_k_scores
 
 if __name__ == "__main__":   
     kg = SemanticKnowledgeGraph()
