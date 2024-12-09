@@ -46,25 +46,25 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Jack, what's your current field of study at Stanford?",
+                "question": "Hi Jack, what's your current field of study at Stanford?",
                 "obj": "Jack",
                 "answer": "Biochemistry",
                 "reason": "While Jack initially started in Chemistry, the memory was updated on 2024-02-15 when he switched his focus to Biochemistry."
             },
             {
-                "question asked by Carol": "Emma, are you still dating David?",
+                "question": "Emma, are you still dating David?",
                 "obj": "Emma",
                 "answer": "No",
                 "reason": "The memory was updated on 2024-02-15 when Emma mentioned her breakup with David."
             },
             {
-                "question asked by Carol": "What type of dance does Emma teach now?",
+                "question": "What type of dance does Emma teach now?",
                 "obj": "Emma",
                 "answer": "Both contemporary and ballet",
                 "reason": "While Emma initially taught only ballet, then switched to contemporary, the latest memory update on 2024-03-01 shows she now teaches both styles."
             },
             {
-                "question asked by Carol": "Where does Jack live now?",
+                "question": "Where does Jack live now?",
                 "obj": "Jack",
                 "answer": "In a bigger apartment with a roommate",
                 "reason": "While Jack initially lived in a small studio apartment, the memory was updated on 2024-03-01 when he moved to a bigger apartment with a roommate."
@@ -118,25 +118,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey John, where are you living now?",
+                "question": "Hey John, where are you living now?",
                 "obj": "John",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-20, John moved from a temporary rental on Pine Avenue to a new apartment on Oak Street."
             },
             {
-                "question asked by Chris": "Sarah, what's your current relationship status?",
+                "question": "Sarah, what's your current relationship status?",
                 "obj": "Sarah",
                 "answer": "Engaged, planning a wedding for June 15th",
                 "reason": "The memory was updated from being newly engaged (2024-01-20) to having set a specific wedding date (2024-03-10)."
             },
             {
-                "question asked by Chris": "John, where are you working these days?",
+                "question": "John, where are you working these days?",
                 "obj": "John",
                 "answer": "Microsoft",
                 "reason": "While John was initially interviewing at both Tesla and Microsoft (2024-01-20), he later accepted Microsoft's offer (2024-02-05) and confirmed still working there (2024-03-10)."
             },
             {
-                "question asked by Chris": "How is John's cat Luna doing?",
+                "question": "How is John's cat Luna doing?",
                 "obj": "John",
                 "answer": "Better now after being sick",
                 "reason": "The most recent update (2024-03-10) indicates Luna was sick but recovered after veterinary treatment."
@@ -187,19 +187,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Alex, what's your current monthly stipend at Stanford?",
+                "question": "Hey Alex, what's your current monthly stipend at Stanford?",
                 "obj": "Alex",
                 "answer": "$3000",
                 "reason": "While Alex's initial stipend was $2500, it was updated on 2024-02-15 to $3000 after their project success."
             },
             {
-                "question asked by Chris": "Sarah, where are you currently living?",
+                "question": "Sarah, where are you currently living?",
                 "obj": "Sarah",
                 "answer": "San Francisco",
                 "reason": "Although Sarah initially lived in Portland, she moved to San Francisco as confirmed in the memory update on 2024-03-01."
             },
             {
-                "question asked by Chris": "How long has Sarah had her cat Luna?",
+                "question": "How long has Sarah had her cat Luna?",
                 "obj": "Sarah",
                 "answer": "Since January 19, 2024",
                 "reason": "Sarah mentioned adopting Luna 'yesterday' in the conversation dated 2024-01-20, so Luna was adopted on January 19, 2024."
@@ -253,19 +253,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey David, what's Sarah's current career focus?",
+                "question": "Hey David, what's Sarah's current career focus?",
                 "obj": "David",
                 "answer": "Interior design",
                 "reason": "While Sarah initially went to Paris for a fashion design internship, the memory was updated on 2024-02-15 when she switched to interior design, and was further confirmed on 2024-03-01 when she mentioned loving her interior design work."
             },
             {
-                "question asked by Chris": "Sarah, what's your current lucky outfit?",
+                "question": "Sarah, what's your current lucky outfit?",
                 "obj": "Sarah",
                 "answer": "A red blazer from a vintage shop in Paris",
                 "reason": "Sarah's lucky outfit was initially a blue dress, but this was updated on 2024-02-15 when she mentioned changing it to a red blazer found in Paris."
             },
             {
-                "question asked by Chris": "David, how are you feeling health-wise?",
+                "question": "David, how are you feeling health-wise?",
                 "obj": "David",
                 "answer": "Better now",
                 "reason": "While David mentioned having a bad cold on 2024-03-01, in the same conversation he updated his status to feeling much better."
@@ -316,19 +316,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What kind of photography does Alex focus on now?",
+                "question": "What kind of photography does Alex focus on now?",
                 "obj": "Blair",
                 "answer": "Wildlife photography",
                 "reason": "While Alex initially started with landscape photography, the memory was updated on 2024-02-05 when Alex mentioned switching to wildlife photography, and this was further confirmed on 2024-03-10 when Alex joined the Wildlife Photographers Association."
             },
             {
-                "question asked by Charlie": "Where is Blair's studio currently located?",
+                "question": "Where is Blair's studio currently located?",
                 "obj": "Alex",
                 "answer": "On the east side of town",
                 "reason": "Blair's studio location was updated from downtown to the east side, first mentioned as a plan on 2024-02-05 and confirmed as completed on 2024-03-10."
             },
             {
-                "question asked by Charlie": "What camera does Alex use?",
+                "question": "What camera does Alex use?",
                 "obj": "Blair",
                 "answer": "A Sony A7III",
                 "reason": "Alex's camera equipment was updated from a Canon Rebel to a Sony A7III on 2024-02-05."
@@ -372,19 +372,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi David, what field are you studying for your PhD now?",
+                "question": "Hi David, what field are you studying for your PhD now?",
                 "obj": "David",
                 "answer": "Biochemistry",
                 "reason": "While David initially started in Chemistry (2024-01-10), his memory was updated on 2024-02-15 when he switched to Biochemistry, which was further confirmed by his research update on 2024-04-05."
             },
             {
-                "question asked by Carol": "Emma, where are you currently working and what's your role?",
+                "question": "Emma, where are you currently working and what's your role?",
                 "obj": "Emma",
                 "answer": "Senior Engineer in the AI team at Microsoft in Seattle",
                 "reason": "Emma's position was updated from software engineer to Senior Engineer on 2024-02-15, and she specifically mentioned working in the AI team. Her location in Seattle remained consistent throughout the conversations."
             },
             {
-                "question asked by Carol": "David, where are you currently living?",
+                "question": "David, where are you currently living?",
                 "obj": "David",
                 "answer": "In a shared house in Oakland",
                 "reason": "While David initially lived in a studio apartment near Berkeley campus (2024-01-10), his living situation was updated on 2024-03-20 when he moved to a shared house in Oakland."
@@ -432,19 +432,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Sarah, where does David currently live?",
+                "question": "Hey Sarah, where does David currently live?",
                 "obj": "Sarah",
                 "answer": "David lives on Pine Street",
                 "reason": "While David initially lived on Oak Street, the memory was updated on 2024-02-15 when he mentioned moving to Pine Street apartment."
             },
             {
-                "question asked by Charlie": "Do either of you have pets? Last time I checked, neither of you did.",
+                "question": "Do either of you have pets? Last time I checked, neither of you did.",
                 "obj": "David",
                 "answer": "Yes, both of us have pets now. I have a cat named Luna, and Sarah has a puppy named Rocky.",
                 "reason": "The memory shows that David adopted Luna (mentioned on 2024-02-05), and Sarah adopted Rocky (mentioned on 2024-02-15)."
             },
             {
-                "question asked by Charlie": "Sarah, what's your current employment status?",
+                "question": "Sarah, what's your current employment status?",
                 "obj": "Sarah",
                 "answer": "I'm now working at the same company as David",
                 "reason": "While Sarah was initially job hunting (2024-01-20), the memory was updated on 2024-02-05 when she got the job at David's company."
@@ -503,19 +503,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "What's Ben's current address?",
+                "question": "What's Ben's current address?",
                 "obj": "Amy",
                 "answer": "456 Oak Street",
                 "reason": "While Ben initially lived on Crystal Avenue, his address was updated on 2024-01-28 when he moved to 456 Oak Street."
             },
             {
-                "question asked by Carol": "What is Amy's current health condition?",
+                "question": "What is Amy's current health condition?",
                 "obj": "Ben",
                 "answer": "She has pneumonia and is on antibiotics",
                 "reason": "While Amy initially had a fever that improved, her condition worsened and was updated on 2024-01-29 when she was diagnosed with pneumonia."
             },
             {
-                "question asked by Carol": "What is Amy's address?",
+                "question": "What is Amy's address?",
                 "obj": "Ben",
                 "answer": "123 Pine Street, apartment 4B",
                 "reason": "Amy's address was mentioned on 2024-01-20 and hasn't been updated in subsequent conversations."
@@ -566,19 +566,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Alex, what department are you working in now?",
+                "question": "Hey Alex, what department are you working in now?",
                 "obj": "Alex",
                 "answer": "Marketing, specifically as Marketing Director",
                 "reason": "While Alex initially moved from sales to marketing on 2024-01-20, his position was updated to Marketing Director as per the memory from 2024-02-05."
             },
             {
-                "question asked by Charlie": "Ben, where is your wedding going to be held?",
+                "question": "Ben, where is your wedding going to be held?",
                 "obj": "Ben",
                 "answer": "Lake Tahoe",
                 "reason": "Although Ben initially planned to have the wedding in Hawaii (2024-01-20), the memory was updated on 2024-03-01 when they changed the venue to Lake Tahoe."
             },
             {
-                "question asked by Charlie": "Hey Ben, how many tattoos do you have now?",
+                "question": "Hey Ben, how many tattoos do you have now?",
                 "obj": "Ben",
                 "answer": "Two tattoos - an anchor with waves around it",
                 "reason": "Ben first got an anchor tattoo (2024-01-20) and then added waves around it (2024-03-01), making it a combined design of two tattoo sessions."
@@ -632,19 +632,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Ben, what color are the walls in Alex's apartment now?",
+                "question": "Hey Ben, what color are the walls in Alex's apartment now?",
                 "obj": "Ben",
                 "answer": "White",
                 "reason": "While Alex's apartment initially had blue walls, the memory was updated on 2024-01-15 when Alex painted them white."
             },
             {
-                "question asked by Charlie": "What's Alex's current career status?",
+                "question": "What's Alex's current career status?",
                 "obj": "Ben",
                 "answer": "Lead designer at their current company",
                 "reason": "While Alex was initially planning to transition to UI/UX design, the memory was updated on 2024-01-20 when they got promoted to lead designer and decided to put the UI/UX transition on hold."
             },
             {
-                "question asked by Charlie": "What's Alex's current salary?",
+                "question": "What's Alex's current salary?",
                 "obj": "Ben",
                 "answer": "$85,000",
                 "reason": "Alex's salary was updated on 2024-01-20 from $65,000 to $85,000 due to the promotion."
@@ -703,25 +703,25 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Sarah, where does Alex currently live?",
+                "question": "Hey Sarah, where does Alex currently live?",
                 "obj": "Sarah",
                 "answer": "Pine Street",
                 "reason": "While Alex initially lived on Oak Street, the memory was updated on 2024-03-01 when Alex moved to Pine Street, becoming Sarah's neighbor."
             },
             {
-                "question asked by Charlie": "What is Alex's current job?",
+                "question": "What is Alex's current job?",
                 "obj": "Sarah",
                 "answer": "InnovateTech",
                 "reason": "Alex's employment status was updated on 2024-02-05 when they switched from TechCorp to InnovateTech."
             },
             {
-                "question asked by Charlie": "What's Sarah's current position at her company?",
+                "question": "What's Sarah's current position at her company?",
                 "obj": "Alex",
                 "answer": "Senior manager",
                 "reason": "Sarah's job status was updated on 2024-02-05 when she mentioned her promotion to senior manager."
             },
             {
-                "question asked by Charlie": "Do Alex and Sarah share any activities together?",
+                "question": "Do Alex and Sarah share any activities together?",
                 "obj": "Sarah",
                 "answer": "Yes, they attend yoga classes together and carpool",
                 "reason": "Initially Sarah attended yoga alone, but Alex joined the classes as mentioned on 2024-02-05, and they later began carpooling as confirmed on 2024-03-01."
@@ -769,19 +769,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what is John studying at Stanford now?",
+                "question": "Hey Sarah, what is John studying at Stanford now?",
                 "obj": "Sarah",
                 "answer": "Computer Science",
                 "reason": "While John initially started in Biology, the memory was updated on 2024-02-15 when he switched to Computer Science with a focus on computational biology and AI applications."
             },
             {
-                "question asked by Chris": "Where are you living now, Sarah?",
+                "question": "Where are you living now, Sarah?",
                 "obj": "Sarah",
                 "answer": "Mountain View",
                 "reason": "Sarah's location was updated from Austin to Mountain View, with the most recent memory on 2024-03-10 confirming she has settled in Mountain View."
             },
             {
-                "question asked by Chris": "John, what's your current living situation?",
+                "question": "John, what's your current living situation?",
                 "obj": "John",
                 "answer": "A bigger apartment in Palo Alto",
                 "reason": "While John initially lived in a small studio apartment near campus, the memory was updated on 2024-03-10 when he moved to a bigger apartment in Palo Alto."
@@ -835,19 +835,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hey Emma, what's David's current job status?",
+                "question": "Hey Emma, what's David's current job status?",
                 "obj": "Emma",
                 "answer": "David is a team lead at a tech company",
                 "reason": "While David initially worked at a coffee shop part-time, he got a job as a junior developer on 2024-02-05, and then was promoted to team lead as mentioned on 2024-02-28."
             },
             {
-                "question asked by Carol": "Where was David living at the beginning of 2024?",
+                "question": "Where was David living at the beginning of 2024?",
                 "obj": "Emma",
                 "answer": "David was living with his parents in the suburbs",
                 "reason": "This was mentioned in the first conversation on 2024-01-20 when Emma referenced his previous living situation before he moved downtown."
             },
             {
-                "question asked by Carol": "What's Emma's current occupation?",
+                "question": "What's Emma's current occupation?",
                 "obj": "David",
                 "answer": "Emma is a certified yoga teacher who teaches at the community center on weekends and is planning to open her own studio",
                 "reason": "The memory shows Emma's progression from getting her yoga certification (2024-01-20), to teaching at the community center (2024-02-05), and then planning to open her own studio (2024-02-28)."
@@ -907,19 +907,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what department does David work in now?",
+                "question": "Hey Sarah, what department does David work in now?",
                 "obj": "Sarah",
                 "answer": "Marketing department",
                 "reason": "According to the memory from 2024-01-20, David transferred to the marketing department from accounting, and while his role has changed within the department, he's still in marketing as confirmed in the latest update."
             },
             {
-                "question asked by Chris": "When is Sarah's wedding planned for?",
+                "question": "When is Sarah's wedding planned for?",
                 "obj": "David",
                 "answer": "September in Bali",
                 "reason": "While initially planned for June, the memory was updated on 2024-02-05 when Sarah changed her wedding plans to a destination wedding in Bali in September."
             },
             {
-                "question asked by Chris": "What's David's current position in the marketing department?",
+                "question": "What's David's current position in the marketing department?",
                 "obj": "Sarah",
                 "answer": "Marketing specialist",
                 "reason": "Though David was promoted to team lead on 2024-02-05, the memory was updated on 2024-02-15 when he stepped down to become a regular marketing specialist due to health issues."
@@ -970,25 +970,25 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Alex, are you still doing night shifts at the hospital?",
+                "question": "Hi Alex, are you still doing night shifts at the hospital?",
                 "obj": "Alex",
                 "answer": "No, I work day shifts now",
                 "reason": "While Alex initially worked night shifts when starting at the hospital, the memory was updated on 2024-02-05 when Alex mentioned switching to day shifts."
             },
             {
-                "question asked by Charlie": "Bella, what's your current job position?",
+                "question": "Bella, what's your current job position?",
                 "obj": "Bella",
                 "answer": "Senior developer at a tech startup",
                 "reason": "As per the memory from 2024-01-20, Bella got promoted to senior developer at her tech startup."
             },
             {
-                "question asked by Charlie": "Does Alex live alone in the apartment?",
+                "question": "Does Alex live alone in the apartment?",
                 "obj": "Alex",
                 "answer": "No, Alex lives with cousin Sarah who is a grad student",
                 "reason": "While Alex initially lived alone in the apartment, the memory was updated on 2024-02-15 when Sarah moved in as a roommate."
             },
             {
-                "question asked by Charlie": "What department does Alex work in at the hospital?",
+                "question": "What department does Alex work in at the hospital?",
                 "obj": "Alex",
                 "answer": "Pediatrics department",
                 "reason": "Although Alex started as a resident doctor, the memory was updated on 2024-02-15 when Alex transferred to the pediatrics department."
@@ -1042,25 +1042,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Tom, where does Sarah currently work?",
+                "question": "Hey Tom, where does Sarah currently work?",
                 "obj": "Tom",
                 "answer": "Boston",
                 "reason": "While Sarah initially worked at CloudTech Solutions, the memory was updated on 2024-03-01 when she mentioned accepting a new position in Boston."
             },
             {
-                "question asked by Chris": "What's Tom's current address?",
+                "question": "What's Tom's current address?",
                 "obj": "Sarah",
                 "answer": "Pine Street",
                 "reason": "Though Tom initially lived on Oak Street, the memory was updated on 2024-02-15 when he mentioned moving to Pine Street."
             },
             {
-                "question asked by Chris": "How's Tom's ankle now?",
+                "question": "How's Tom's ankle now?",
                 "obj": "Sarah",
                 "answer": "Fully recovered",
                 "reason": "While Tom initially had an ankle injury, the memory was updated on 2024-02-15 when he mentioned his ankle had fully recovered and he was back to playing basketball."
             },
             {
-                "question asked by Chris": "What's Tom's current role at work?",
+                "question": "What's Tom's current role at work?",
                 "obj": "Sarah",
                 "answer": "Mobile development team leader",
                 "reason": "Tom's role evolved from software engineer to senior engineer, and finally to mobile development team leader as updated in the memory from 2024-03-01."
@@ -1114,19 +1114,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "What's Alex's current job status?",
+                "question": "What's Alex's current job status?",
                 "obj": "Ben",
                 "answer": "Alex is working as a Senior Marketing Manager at Tech Solutions",
                 "reason": "While Alex initially worked at a marketing firm, the memory was updated on 2024-02-05 when they got the job at Tech Solutions, and was further confirmed on 2024-03-15 when they mentioned completing their first month there."
             },
             {
-                "question asked by Carol": "Can Ben currently play the piano?",
+                "question": "Can Ben currently play the piano?",
                 "obj": "Alex",
                 "answer": "No, Ben currently cannot play piano due to a broken right hand",
                 "reason": "While Ben was taking piano lessons and learned his first song, the memory was updated on 2024-03-15 when he mentioned breaking his hand in a cycling accident, requiring 6 weeks of recovery."
             },
             {
-                "question asked by Carol": "Where does Alex live?",
+                "question": "Where does Alex live?",
                 "obj": "Ben",
                 "answer": "Alex lives in an apartment downtown with a city view",
                 "reason": "This was established in the first memory entry on 2024-01-20 and hasn't been updated in subsequent conversations."
@@ -1180,19 +1180,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Ben, how is Alex's health now?",
+                "question": "Hey Ben, how is Alex's health now?",
                 "obj": "Ben",
                 "answer": "Alex has recovered and is back to teaching",
                 "reason": "While Alex was sick with flu on 2024-02-05, the memory was updated on 2024-02-15 showing Alex returned to teaching and was feeling better."
             },
             {
-                "question asked by Charlie": "What's Ben's current job position?",
+                "question": "What's Ben's current job position?",
                 "obj": "Ben",
                 "answer": "Senior engineer",
                 "reason": "Ben's position was updated from software engineer to senior engineer in the memory from 2024-02-15, with the additional detail of moving to the downtown office."
             },
             {
-                "question asked by Charlie": "What kind of pet does Ben have?",
+                "question": "What kind of pet does Ben have?",
                 "obj": "Ben",
                 "answer": "A grey tabby cat named Luna, 2 years old",
                 "reason": "Ben initially mentioned thinking about adopting a cat on 2024-01-20, and the memory was updated on 2024-02-05 confirming he adopted a grey tabby cat named Luna."
@@ -1243,19 +1243,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Sarah, does Alex still have dairy allergies?",
+                "question": "Hi Sarah, does Alex still have dairy allergies?",
                 "obj": "Sarah",
                 "answer": "No, Alex has fully recovered from the dairy allergy",
                 "reason": "While Alex initially had a dairy allergy (2024-01-20), the condition improved (2024-02-05), and finally, as per the latest update (2024-03-10), Alex has fully recovered."
             },
             {
-                "question asked by Charlie": "Where is Alex teaching now?",
+                "question": "Where is Alex teaching now?",
                 "obj": "Sarah",
                 "answer": "Harvard",
                 "reason": "Although Alex initially taught at Stanford (2024-01-20), the memory was updated on 2024-02-05 when Alex accepted a position at Harvard, and this was confirmed in the March conversation."
             },
             {
-                "question asked by Charlie": "Is Sarah still vegetarian?",
+                "question": "Is Sarah still vegetarian?",
                 "obj": "Alex",
                 "answer": "Yes, Sarah is still vegetarian",
                 "reason": "Sarah mentioned becoming vegetarian in January, and in the most recent conversation (2024-03-10), she confirmed she's 'still going strong' with her vegetarian diet."
@@ -1312,19 +1312,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Sarah, where is Alex currently living?",
+                "question": "Hi Sarah, where is Alex currently living?",
                 "obj": "Sarah",
                 "answer": "Alex lives in a smaller apartment near TechCorp, not downtown anymore",
                 "reason": "While Alex initially moved downtown (2024-01-20), the memory was updated on 2024-02-05 when Alex mentioned moving to a smaller place closer to TechCorp due to high downtown rent."
             },
             {
-                "question asked by Carol": "What is Sarah's current occupation?",
+                "question": "What is Sarah's current occupation?",
                 "obj": "Alex",
                 "answer": "Sarah is going to be a lab technician",
                 "reason": "Though Sarah initially started a PhD in Chemistry (2024-01-20), the memory was updated on 2024-03-10 when she decided to leave the PhD program and transition to working as a lab technician in industry."
             },
             {
-                "question asked by Carol": "What is Alex's current job?",
+                "question": "What is Alex's current job?",
                 "obj": "Sarah",
                 "answer": "Alex is working as a software engineer at TechCorp",
                 "reason": "While Alex was initially unemployed after leaving the bank (2024-01-20), the memory was updated on 2024-02-05 when Alex got hired as a software engineer at TechCorp, and was further confirmed on 2024-03-10 when Alex mentioned loving the new role."
@@ -1372,19 +1372,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Where does Alex currently live?",
+                "question": "Where does Alex currently live?",
                 "obj": "Ben",
                 "answer": "Maple Avenue",
                 "reason": "While Alex initially lived on Oak Street, the memory was updated on 2024-02-15 when Alex mentioned moving to Maple Avenue due to construction issues."
             },
             {
-                "question asked by Charlie": "What's Ben's current work situation?",
+                "question": "What's Ben's current work situation?",
                 "obj": "Alex",
                 "answer": "He works remotely as a software engineer at TechCorp in the AI team",
                 "reason": "Ben initially started as a software engineer at TechCorp (2024-01-20), then moved to the AI team (2024-02-15), and finally switched to remote work (2024-03-01)."
             },
             {
-                "question asked by Charlie": "What's Alex's current job position?",
+                "question": "What's Alex's current job position?",
                 "obj": "Ben",
                 "answer": "Head Teacher doing hybrid classes",
                 "reason": "Alex was initially a teacher at Central High School, but was promoted to Head Teacher (2024-02-15), and later mentioned doing hybrid classes (2024-03-01)."
@@ -1432,19 +1432,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "What camera is John currently using?",
+                "question": "What camera is John currently using?",
                 "obj": "Sarah",
                 "answer": "Nikon Z6",
                 "reason": "While John initially used a Canon camera, the memory was updated on 2024-02-15 when he upgraded to a Nikon Z6."
             },
             {
-                "question asked by Chris": "What camera does Sarah use now?",
+                "question": "What camera does Sarah use now?",
                 "obj": "John",
                 "answer": "Fujifilm X-T4",
                 "reason": "Sarah's camera equipment was updated from Sony A7III to Fujifilm X-T4 on 2024-03-01."
             },
             {
-                "question asked by Chris": "What type of photography does John specialize in?",
+                "question": "What type of photography does John specialize in?",
                 "obj": "Sarah",
                 "answer": "Portrait photography",
                 "reason": "From the initial conversation, John mentioned enjoying portrait photography, and this was reinforced when he later mentioned getting paid gigs for family portraits."
@@ -1492,19 +1492,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "How many hours of sleep is Adam getting now?",
+                "question": "How many hours of sleep is Adam getting now?",
                 "obj": "Beth",
                 "answer": "8 hours",
                 "reason": "While Adam initially reported getting only 5 hours of sleep, this was updated on 2024-02-05 when he mentioned adjusting to a better schedule with 8 hours of sleep."
             },
             {
-                "question asked by Charlie": "Where does Beth currently do her writing?",
+                "question": "Where does Beth currently do her writing?",
                 "obj": "Adam",
                 "answer": "At the local library",
                 "reason": "Beth's writing location was updated on 2024-02-15 when she mentioned switching from writing at home to working at the local library."
             },
             {
-                "question asked by Charlie": "What kind of pet does Beth have?",
+                "question": "What kind of pet does Beth have?",
                 "obj": "Adam",
                 "answer": "A cat named Luna",
                 "reason": "This information was introduced on 2024-01-20 when Beth mentioned adopting a cat named Luna, and was referenced again in later conversations."
@@ -1555,19 +1555,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Beth, what program is Alex studying in at Stanford?",
+                "question": "Hey Beth, what program is Alex studying in at Stanford?",
                 "obj": "Beth",
                 "answer": "Physics",
                 "reason": "While Alex initially started in Chemistry, the memory was updated on 2024-02-15 when Alex switched to Physics PhD program."
             },
             {
-                "question asked by Charlie": "Where is Alex currently living?",
+                "question": "Where is Alex currently living?",
                 "obj": "Beth",
                 "answer": "In a studio apartment near Stanford campus",
                 "reason": "Alex's living situation changed multiple times: from graduate dorms, to Palo Alto with roommates, and finally to a studio apartment near campus as updated on 2024-03-01."
             },
             {
-                "question asked by Charlie": "When is Beth's wedding?",
+                "question": "When is Beth's wedding?",
                 "obj": "Alex",
                 "answer": "Next spring",
                 "reason": "Initially Beth and James planned for a December wedding, but the memory was updated on 2024-03-01 when they postponed it to next spring."
@@ -1621,19 +1621,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hi Sarah, where is John pursuing his PhD now?",
+                "question": "Hi Sarah, where is John pursuing his PhD now?",
                 "obj": "Sarah",
                 "answer": "Columbia University in New York",
                 "reason": "While John initially started his PhD at Stanford, the memory was updated on 2024-03-10 when he confirmed his transfer to Columbia University."
             },
             {
-                "question asked by Chris": "Where does Sarah live currently, and does she have any pets?",
+                "question": "Where does Sarah live currently, and does she have any pets?",
                 "obj": "John",
                 "answer": "Sarah lives in New York with her cat Luna",
                 "reason": "The memory was updated on 2024-02-05 when Sarah moved from Portland to New York with her cat Luna for her book deal with Penguin Publishers."
             },
             {
-                "question asked by Chris": "What are both John and Sarah's current occupations?",
+                "question": "What are both John and Sarah's current occupations?",
                 "obj": "Sarah",
                 "answer": "I'm a writer with a Penguin book deal, and John is a PhD student in Chemistry",
                 "reason": "The memories show Sarah got a book deal with Penguin Publishers (updated on 2024-02-05), and John is pursuing his PhD in Chemistry, now at Columbia (updated on 2024-03-10)."
@@ -1687,19 +1687,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What kind of car does Alice currently drive?",
+                "question": "What kind of car does Alice currently drive?",
                 "obj": "Bob",
                 "answer": "A red Tesla Model 3",
                 "reason": "While Alice initially had a blue Toyota Corolla, the memory was updated on 2024-01-25 when she purchased a new red Tesla Model 3, which was later confirmed on 2024-02-01 when Bob mentioned seeing her driving it."
             },
             {
-                "question asked by Charlie": "Where does Bob currently live?",
+                "question": "Where does Bob currently live?",
                 "obj": "Alice",
                 "answer": "At his parents' house on Maple Drive",
                 "reason": "Although Bob had moved to Oak Street (updated from Pine Avenue), the most recent memory update from 2024-02-01 indicates he had to temporarily move to his parents' house on Maple Drive due to flooding in his apartment."
             },
             {
-                "question asked by Charlie": "What was Alice's previous mode of transportation before her Tesla?",
+                "question": "What was Alice's previous mode of transportation before her Tesla?",
                 "obj": "Bob",
                 "answer": "Public transportation, and before that, a blue Toyota Corolla from 2015",
                 "reason": "The memories show that Alice's transportation situation changed from owning a Toyota Corolla, to using public transportation when it broke down (2024-01-20), and finally to driving a Tesla Model 3 (2024-01-25)."
@@ -1753,25 +1753,25 @@
         },
         "queries": [
             {
-                "question asked by Tom": "Hi Sarah, where does James currently live?",
+                "question": "Hi Sarah, where does James currently live?",
                 "obj": "Sarah",
                 "answer": "Garden Residences",
                 "reason": "While James initially lived in the Blue Apartment complex, the memory was updated on 2024-02-15 when he mentioned moving to Garden Residences."
             },
             {
-                "question asked by Tom": "What instrument does Sarah currently play?",
+                "question": "What instrument does Sarah currently play?",
                 "obj": "James",
                 "answer": "Viola",
                 "reason": "Sarah originally played violin, but the memory was updated on 2024-03-01 when she mentioned switching to viola."
             },
             {
-                "question asked by Tom": "What piece is James currently working on?",
+                "question": "What piece is James currently working on?",
                 "obj": "Sarah",
                 "answer": "He's currently not practicing due to a wrist injury",
                 "reason": "While James was working on 'F\u00fcr Elise', the memory was updated on 2024-03-01 when he mentioned having to pause lessons due to a wrist injury."
             },
             {
-                "question asked by Tom": "What are Sarah's current practice hours?",
+                "question": "What are Sarah's current practice hours?",
                 "obj": "James",
                 "answer": "6-8 PM",
                 "reason": "Sarah's practice schedule was initially 7-9 PM as updated on 2024-02-15, but was further updated to 6-8 PM on 2024-03-01."
@@ -1819,19 +1819,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Where does David currently live?",
+                "question": "Where does David currently live?",
                 "obj": "Emma",
                 "answer": "Albany",
                 "reason": "While David initially lived in Berkeley dorms, his living situation was updated on 2024-02-15 when he found an apartment in Albany, and this was confirmed as his current residence in the March 20 conversation."
             },
             {
-                "question asked by Carol": "What's Emma's current relationship status?",
+                "question": "What's Emma's current relationship status?",
                 "obj": "David",
                 "answer": "Engaged to Tom and living together in Oakland",
                 "reason": "Emma's status updated from being newly engaged on 2024-01-10 to setting a wedding date for June and moving in with Tom in their Oakland house by March 20."
             },
             {
-                "question asked by Carol": "What is David's current relationship status?",
+                "question": "What is David's current relationship status?",
                 "obj": "Emma",
                 "answer": "Single",
                 "reason": "While David was initially single, then briefly dated Rachel, the most recent update from March 20 indicates that things didn't work out with Rachel, so he is currently single again."
@@ -1885,25 +1885,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what shift does James work at the hospital?",
+                "question": "Hey Sarah, what shift does James work at the hospital?",
                 "obj": "Sarah",
                 "answer": "Day shift",
                 "reason": "While James initially worked night shifts when he started at the hospital, the memory was updated on 2024-02-05 when he switched to day shifts, and this was further confirmed on 2024-02-15."
             },
             {
-                "question asked by Chris": "Does James have any pets?",
+                "question": "Does James have any pets?",
                 "obj": "Sarah",
                 "answer": "Yes, he has a 2-year-old rescued cat named Luna",
                 "reason": "The memory was updated on 2024-02-15 when James introduced his new cat Luna."
             },
             {
-                "question asked by Chris": "What was James's previous job?",
+                "question": "What was James's previous job?",
                 "obj": "Sarah",
                 "answer": "He was a teacher",
                 "reason": "This information was mentioned in the initial conversation on 2024-01-20 when Sarah recalled his previous occupation."
             },
             {
-                "question asked by Chris": "What is Sarah's current job position?",
+                "question": "What is Sarah's current job position?",
                 "obj": "James",
                 "answer": "Senior designer at her firm",
                 "reason": "Sarah's job status was updated on 2024-02-05 when she mentioned her promotion to senior designer from her previous position as an interior designer."
@@ -1951,19 +1951,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Bella, does Alex live alone or with roommates?",
+                "question": "Hey Bella, does Alex live alone or with roommates?",
                 "obj": "Bella",
                 "answer": "Currently Alex lives with a roommate named Tom, but will be moving to a studio apartment next month",
                 "reason": "The initial memory shows Alex moved in with roommate Tom on 2024-01-20, and on 2024-03-10, Alex announced plans to move to a studio apartment next month."
             },
             {
-                "question asked by Charlie": "What shift does Alex work at the hospital?",
+                "question": "What shift does Alex work at the hospital?",
                 "obj": "Bella",
                 "answer": "Day shifts",
                 "reason": "While Alex initially worked night shifts as mentioned on 2024-01-20, this was updated on 2024-02-05 when Alex switched to day shifts."
             },
             {
-                "question asked by Charlie": "Is Alex dating anyone right now?",
+                "question": "Is Alex dating anyone right now?",
                 "obj": "Bella",
                 "answer": "No, Alex is currently single",
                 "reason": "Though Alex started dating Sarah from the pediatric ward (2024-02-05), the most recent update from 2024-03-10 indicates they broke up."
@@ -2011,19 +2011,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What camera is Alex currently using?",
+                "question": "What camera is Alex currently using?",
                 "obj": "Beth",
                 "answer": "A Sony mirrorless camera",
                 "reason": "While Alex initially used an old Canon camera, the memory was updated on 2024-02-05 when Alex mentioned buying a new Sony mirrorless camera, and this was further confirmed on 2024-02-15 when they discussed the quality of photos taken with it."
             },
             {
-                "question asked by Charlie": "How many days per week is Beth teaching yoga now?",
+                "question": "How many days per week is Beth teaching yoga now?",
                 "obj": "Alex",
                 "answer": "Three days - Tuesdays, Thursdays, and Saturdays",
                 "reason": "Initially Beth taught only Tuesdays and Thursdays (2024-01-20), but the memory was updated on 2024-02-05 when she added Saturday classes."
             },
             {
-                "question asked by Charlie": "Is Alex currently attending Beth's yoga classes?",
+                "question": "Is Alex currently attending Beth's yoga classes?",
                 "obj": "Beth",
                 "answer": "No, Alex is temporarily not attending due to a pulled muscle",
                 "reason": "While Alex started attending the Saturday class, the most recent memory update from 2024-02-15 indicates they're taking a break due to a pulled muscle."
@@ -2091,19 +2091,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where does Alex currently live?",
+                "question": "Hey Sarah, where does Alex currently live?",
                 "obj": "Sarah",
                 "answer": "Maple Avenue",
                 "reason": "While Alex initially lived on Oak Street, the memory was updated on 2024-03-01 when Alex signed a lease for a new apartment on Maple Avenue."
             },
             {
-                "question asked by Chris": "What's Alex's current relationship status?",
+                "question": "What's Alex's current relationship status?",
                 "obj": "Sarah",
                 "answer": "In a relationship with Taylor",
                 "reason": "Although Alex was initially dating Jordan and then became single, the most recent update from 2024-03-01 confirms Alex is in a relationship with Taylor."
             },
             {
-                "question asked by Chris": "How is Sarah's photography business doing?",
+                "question": "How is Sarah's photography business doing?",
                 "obj": "Alex",
                 "answer": "Very successful with 15 clients",
                 "reason": "Sarah's business showed consistent growth from first client to hiring an assistant, and the latest update on 2024-03-01 mentions reaching 15 clients."
@@ -2154,19 +2154,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Which apartment unit does Ben currently live in?",
+                "question": "Which apartment unit does Ben currently live in?",
                 "obj": "Alex",
                 "answer": "Unit 310",
                 "reason": "While Ben initially lived in unit 305, the memory was updated on 2024-02-10 when he moved to unit 310 for better sunlight."
             },
             {
-                "question asked by Carol": "How is Alex's health condition now?",
+                "question": "How is Alex's health condition now?",
                 "obj": "Ben",
                 "answer": "Alex is feeling better after taking antibiotics",
                 "reason": "Although Alex had a fever on 2024-02-05, the most recent memory update from 2024-02-10 indicates that Alex recovered after taking antibiotics."
             },
             {
-                "question asked by Carol": "Where was Alex living when he first started his PhD?",
+                "question": "Where was Alex living when he first started his PhD?",
                 "obj": "Ben",
                 "answer": "University dorms, room 112",
                 "reason": "From the initial conversation on 2024-01-20, Alex mentioned staying at the University dorms, room 112, before moving to Riverside Complex."
@@ -2222,19 +2222,19 @@
         },
         "queries": [
             {
-                "question asked by Tom": "What camera is James currently using?",
+                "question": "What camera is James currently using?",
                 "obj": "Sarah",
                 "answer": "James is using the Sony A7III",
                 "reason": "While James initially had a Canon camera, the memory shows he bought Sarah's Sony A7III on February 5th. Though he mentioned thinking about upgrading to A7IV on March 1st, there's no confirmation of this change happening yet."
             },
             {
-                "question asked by Tom": "Has James had any issues with his current camera?",
+                "question": "Has James had any issues with his current camera?",
                 "obj": "Sarah",
                 "answer": "Yes, he had an issue with the shutter getting stuck, but it was repaired",
                 "reason": "The memory from February 15th shows that James had to get the Sony repaired due to a stuck shutter, but it was fixed and working perfectly afterward."
             },
             {
-                "question asked by Tom": "What camera does Sarah use?",
+                "question": "What camera does Sarah use?",
                 "obj": "James",
                 "answer": "Sarah uses the Sony A7IV",
                 "reason": "According to the memory from January 20th, Sarah upgraded from the A7III to the A7IV, and this has remained consistent throughout the conversation."
@@ -2288,19 +2288,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Blair, what was Alex's initial research topic in their PhD?",
+                "question": "Hi Blair, what was Alex's initial research topic in their PhD?",
                 "obj": "Blair",
                 "answer": "Plant genetics",
                 "reason": "From the memory updates, Alex initially started in plant genetics before switching to marine biology on February 5th."
             },
             {
-                "question asked by Charlie": "What's the current status of Blair's novel?",
+                "question": "What's the current status of Blair's novel?",
                 "obj": "Alex",
                 "answer": "Completed draft and in editing phase",
                 "reason": "The memory was updated on February 20th when Blair announced completing the draft and moving to editing, progressing from the initial 30% and then 60% completion states."
             },
             {
-                "question asked by Charlie": "How is Alex's cat Shadow doing now?",
+                "question": "How is Alex's cat Shadow doing now?",
                 "obj": "Blair",
                 "answer": "Well settled and claiming the living room",
                 "reason": "While Shadow was initially hiding under the bed, the memory was updated on February 5th showing Shadow had adjusted and was confidently occupying the living room."
@@ -2362,19 +2362,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "What is John's current work situation?",
+                "question": "What is John's current work situation?",
                 "obj": "Sarah",
                 "answer": "John is working part-time at TechCorp while developing his startup",
                 "reason": "While John started as a full-time junior developer and was promoted to senior developer, the most recent memory update from 2024-03-01 shows he switched to part-time to work on his startup."
             },
             {
-                "question asked by Chris": "Where does Sarah currently live?",
+                "question": "Where does Sarah currently live?",
                 "obj": "John",
                 "answer": "Sarah lives in the suburbs",
                 "reason": "Sarah's living situation changed from the city center to the suburbs, as confirmed in the memories from 2024-01-20 (planning the move) and 2024-02-15 (completed move), with the latest confirmation on 2024-03-01."
             },
             {
-                "question asked by Chris": "What's Sarah's current job?",
+                "question": "What's Sarah's current job?",
                 "obj": "John",
                 "answer": "Sarah is a product manager at InnovateLabs",
                 "reason": "Sarah was initially between jobs, but the memory was updated on 2024-01-20 when she got the product manager role at InnovateLabs, and this was confirmed as her current situation in subsequent conversations."
@@ -2428,19 +2428,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what's Tom's current work schedule?",
+                "question": "Hey Sarah, what's Tom's current work schedule?",
                 "obj": "Sarah",
                 "answer": "Day shift at the hospital",
                 "reason": "While Tom initially worked night shifts when he started at the hospital, the memory was updated on 2024-01-20 when he got transferred to day shift."
             },
             {
-                "question asked by Chris": "Where does Tom live now?",
+                "question": "Where does Tom live now?",
                 "obj": "Sarah",
                 "answer": "Third floor apartment on Oak Street",
                 "reason": "Tom's living situation was updated twice: first moved to Oak Street on 2024-01-10, then moved upstairs to a bigger apartment on the third floor on 2024-02-05."
             },
             {
-                "question asked by Chris": "Does Tom have any pets?",
+                "question": "Does Tom have any pets?",
                 "obj": "Sarah",
                 "answer": "Yes, an orange tabby cat named Rusty",
                 "reason": "Tom adopted the cat on 2024-02-05, updating his previous status of having no pets."
@@ -2494,19 +2494,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "What camera is James currently using?",
+                "question": "What camera is James currently using?",
                 "obj": "Sarah",
                 "answer": "Sony A7III",
                 "reason": "While James initially had a Canon camera, the memory was updated on 2024-02-05 when he purchased a Sony A7III, and this was further confirmed when he mentioned selling his old Canon on 2024-02-20."
             },
             {
-                "question asked by Chris": "What is Sarah's current relationship status?",
+                "question": "What is Sarah's current relationship status?",
                 "obj": "James",
                 "answer": "Single",
                 "reason": "Sarah's status changed from engaged (2024-01-20) to single when she cancelled her engagement (2024-02-20)."
             },
             {
-                "question asked by Chris": "How is James doing in his photography course?",
+                "question": "How is James doing in his photography course?",
                 "obj": "Sarah",
                 "answer": "He's doing very well, with an A grade",
                 "reason": "James's grade improved from C to A after getting his new camera, as mentioned in the conversation on 2024-02-05."
@@ -2557,19 +2557,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Ben, what's Alex's current job position?",
+                "question": "Hi Ben, what's Alex's current job position?",
                 "obj": "Ben",
                 "answer": "Senior Developer",
                 "reason": "While Alex was initially working as a developer at a tech startup, the memory was updated on 2024-02-05 when he got promoted to Senior Developer, and this was confirmed again in the conversation on 2024-03-10."
             },
             {
-                "question asked by Carol": "What's Alex's relationship status now?",
+                "question": "What's Alex's relationship status now?",
                 "obj": "Ben",
                 "answer": "In a relationship with Jamie",
                 "reason": "Alex's relationship status has changed multiple times: first broke up with Sarah (2024-01-20), then started dating Jamie (2024-02-05), and finally made it official with Jamie (2024-03-10)."
             },
             {
-                "question asked by Carol": "Where does Alex live?",
+                "question": "Where does Alex live?",
                 "obj": "Ben",
                 "answer": "In a downtown apartment with a city view",
                 "reason": "As mentioned in the first conversation on 2024-01-20, Alex moved into a new apartment downtown, and there have been no updates about moving since then."
@@ -2623,25 +2623,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Where was Alex living before moving to the downtown apartment?",
+                "question": "Where was Alex living before moving to the downtown apartment?",
                 "obj": "Sarah",
                 "answer": "At his parents' place",
                 "reason": "From the January 20 conversation, Sarah explicitly mentioned Alex was staying at his parents' place before moving to the downtown apartment."
             },
             {
-                "question asked by Chris": "Where does Alex currently work?",
+                "question": "Where does Alex currently work?",
                 "obj": "Sarah",
                 "answer": "InnovateSolutions",
                 "reason": "While Alex initially worked at TechCorp, the memory was updated on February 5 when he got the job at InnovateSolutions, and was further confirmed on March 10 when they discussed his new job."
             },
             {
-                "question asked by Chris": "Does Alex have any pets?",
+                "question": "Does Alex have any pets?",
                 "obj": "Sarah",
                 "answer": "Yes, a kitten named Luna",
                 "reason": "While Alex initially had no pets, the memory was updated on March 10 when he adopted one of Sarah's sister's kittens and named her Luna."
             },
             {
-                "question asked by Chris": "What is Sarah's current job position?",
+                "question": "What is Sarah's current job position?",
                 "obj": "Alex",
                 "answer": "Senior Marketing Manager",
                 "reason": "The memory was updated in the March 10 conversation when Sarah announced her promotion to Senior Marketing Manager."
@@ -2695,19 +2695,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi John, where does Emma currently do her writing work?",
+                "question": "Hi John, where does Emma currently do her writing work?",
                 "obj": "John",
                 "answer": "At the local library",
                 "reason": "While Emma initially worked from home, and then at her apartment on Oak Street, the memory was updated on 2024-03-10 when she mentioned moving her workspace to the local library."
             },
             {
-                "question asked by Carol": "Emma, what's John's current living situation?",
+                "question": "Emma, what's John's current living situation?",
                 "obj": "Emma",
                 "answer": "He lives in an apartment on Maple Avenue",
                 "reason": "Though John initially lived in university dorms, the memory was updated on 2024-02-05 when he moved to an apartment on Maple Avenue."
             },
             {
-                "question asked by Carol": "John, what kind of writing does Emma do now?",
+                "question": "John, what kind of writing does Emma do now?",
                 "obj": "John",
                 "answer": "Screenwriting",
                 "reason": "Emma's occupation changed from novel writing to screenwriting, as updated in the memory from 2024-03-10, where she confirmed her transition to screenwriting."
@@ -2761,19 +2761,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hi Jack, what's Sarah's current job position at Lincoln High School?",
+                "question": "Hi Jack, what's Sarah's current job position at Lincoln High School?",
                 "obj": "Jack",
                 "answer": "Department Head",
                 "reason": "While Sarah was initially introduced as a teacher, her status was updated on 2024-01-15 when she mentioned getting promoted to Department Head."
             },
             {
-                "question asked by Chris": "Sarah, what's Jack's current living situation?",
+                "question": "Sarah, what's Jack's current living situation?",
                 "obj": "Sarah",
                 "answer": "Jack lives in a downtown apartment with his cat Luna and me as his roommate",
                 "reason": "The memory shows progression from Jack living alone (2024-01-10), to getting a cat named Luna (2024-01-20), and Sarah agreeing to move in as a roommate (2024-01-20)."
             },
             {
-                "question asked by Chris": "Jack, does Sarah have any medical conditions I should be aware of?",
+                "question": "Jack, does Sarah have any medical conditions I should be aware of?",
                 "obj": "Jack",
                 "answer": "Yes, Sarah has a severe peanut allergy",
                 "reason": "This information was shared on 2024-01-20 during their conversation about moving in together."
@@ -2827,19 +2827,19 @@
         },
         "queries": [
             {
-                "question asked by Clara": "What type of paint does Mark currently use?",
+                "question": "What type of paint does Mark currently use?",
                 "obj": "Sarah",
                 "answer": "Acrylics",
                 "reason": "While Mark initially started with watercolors on 2024-01-20, he switched to acrylics as mentioned on 2024-01-25, and confirmed his continued use of acrylics on 2024-02-01."
             },
             {
-                "question asked by Clara": "What camera does Sarah currently use?",
+                "question": "What camera does Sarah currently use?",
                 "obj": "Mark",
                 "answer": "Nikon",
                 "reason": "Sarah initially had a Canon camera, but the memory was updated on 2024-02-01 when she mentioned selling it and upgrading to a Nikon."
             },
             {
-                "question asked by Clara": "How is Mark's health now?",
+                "question": "How is Mark's health now?",
                 "obj": "Sarah",
                 "answer": "He's healthy/better now",
                 "reason": "While Mark was sick with a cold on 2024-01-20, the memory was updated on 2024-01-25 when he mentioned feeling better, and subsequent conversations show him being active with his painting."
@@ -2890,19 +2890,19 @@
         },
         "queries": [
             {
-                "question asked by Tom": "Hi John, what's your current photography session rate?",
+                "question": "Hi John, what's your current photography session rate?",
                 "obj": "John",
                 "answer": "$350",
                 "reason": "While John's initial rate was $200, then updated to $300 with his studio move, the most recent memory from 2024-03-01 shows he increased his rate to $350 per session due to high demand."
             },
             {
-                "question asked by Tom": "Sarah, when is your wedding planned for?",
+                "question": "Sarah, when is your wedding planned for?",
                 "obj": "Sarah",
                 "answer": "September",
                 "reason": "Although Sarah initially considered a June wedding, the memory was updated on 2024-02-15 when she changed it to September due to venue availability."
             },
             {
-                "question asked by Tom": "What instrument does Sarah teach?",
+                "question": "What instrument does Sarah teach?",
                 "obj": "Sarah",
                 "answer": "Violin",
                 "reason": "While Sarah initially taught piano for 5 years, the memory was updated on 2024-03-01 when she switched to teaching violin lessons due to higher demand."
@@ -2953,19 +2953,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What medium did Adam start painting with?",
+                "question": "What medium did Adam start painting with?",
                 "obj": "Beth",
                 "answer": "Acrylic paints",
                 "reason": "From the January 20th conversation, Adam explicitly mentioned he was using acrylic paints when he first started."
             },
             {
-                "question asked by Charlie": "What is Adam currently painting?",
+                "question": "What is Adam currently painting?",
                 "obj": "Beth",
                 "answer": "Dog portraits",
                 "reason": "While Adam started with landscapes, then moved to cat portraits, the most recent memory update from March 10th shows he's working on dog portraits for the spring exhibition."
             },
             {
-                "question asked by Charlie": "Where are Beth's weekend classes currently held?",
+                "question": "Where are Beth's weekend classes currently held?",
                 "obj": "Adam",
                 "answer": "Riverside Studio",
                 "reason": "Beth's teaching location was updated in the February 5th conversation when she announced moving to Riverside Studio, and this was confirmed as the current location in the March 10th conversation."
@@ -3019,19 +3019,19 @@
         },
         "queries": [
             {
-                "question asked by Tom": "Hey John, how's your yoga training going?",
+                "question": "Hey John, how's your yoga training going?",
                 "obj": "John",
                 "answer": "I'm back to training and enjoying it",
                 "reason": "While John initially had to pause due to a knee injury on 2024-01-20, the memory was updated on 2024-02-05 showing he resumed training after his knee healed."
             },
             {
-                "question asked by Tom": "Sarah, where are you living now?",
+                "question": "Sarah, where are you living now?",
                 "obj": "Sarah",
                 "answer": "In a two-bedroom apartment downtown",
                 "reason": "Sarah's living situation was updated twice: first moving to a small studio (2024-01-10), then to a two-bedroom apartment in the same building (2024-02-05)."
             },
             {
-                "question asked by Tom": "Sarah, tell me about your cat.",
+                "question": "Sarah, tell me about your cat.",
                 "obj": "Sarah",
                 "answer": "I have a 2-year-old calm cat named Luna who loves her window seat",
                 "reason": "This information was shared on 2024-01-20 when Sarah first mentioned getting Luna."
@@ -3076,19 +3076,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Where does David currently live?",
+                "question": "Where does David currently live?",
                 "obj": "Emma",
                 "answer": "156 Palm Street",
                 "reason": "While David initially lived in graduate housing (apartment 204), the memory was updated on 2024-02-05 when he moved to 156 Palm Street, and this was his last mentioned residence."
             },
             {
-                "question asked by Charlie": "What is Emma currently working on?",
+                "question": "What is Emma currently working on?",
                 "obj": "David",
                 "answer": "She's working as a creative writing teacher and has paused her romance novel writing",
                 "reason": "While Emma was initially working on a romance novel after completing her mystery thriller, the memory was updated on 2024-03-10 when she started teaching and put her romance novel on hold."
             },
             {
-                "question asked by Charlie": "What was Emma's first book about?",
+                "question": "What was Emma's first book about?",
                 "obj": "Emma",
                 "answer": "It was a mystery thriller set in Paris",
                 "reason": "This information was shared on 2024-02-05 and remained consistent throughout the conversation."
@@ -3139,19 +3139,19 @@
         },
         "queries": [
             {
-                "question asked by Claire": "Hi John, what's your current role at TechCorp?",
+                "question": "Hi John, what's your current role at TechCorp?",
                 "obj": "John",
                 "answer": "Senior developer",
                 "reason": "While John initially started as a junior developer on 2024-01-10, his role was updated to senior developer as mentioned in the conversation on 2024-02-15."
             },
             {
-                "question asked by Claire": "Sarah, are you still freelancing?",
+                "question": "Sarah, are you still freelancing?",
                 "obj": "Sarah",
                 "answer": "No, I'm now working full-time at DesignHub",
                 "reason": "Sarah's employment status changed from freelance graphic designer to full-time employee at DesignHub, as updated in the conversation on 2024-03-01."
             },
             {
-                "question asked by Claire": "Where does John live now?",
+                "question": "Where does John live now?",
                 "obj": "John",
                 "answer": "A two-bedroom apartment",
                 "reason": "While John initially lived in a small studio apartment downtown, he moved to a two-bedroom apartment as mentioned in the conversation on 2024-02-15 after his promotion."
@@ -3196,19 +3196,19 @@
         },
         "queries": [
             {
-                "question asked by Emma": "What is David's current apartment number at Stanford?",
+                "question": "What is David's current apartment number at Stanford?",
                 "obj": "Sarah",
                 "answer": "306",
                 "reason": "While David initially lived in apartment 204, the memory was updated on 2024-02-15 when he moved to apartment 306."
             },
             {
-                "question asked by Emma": "What type of writing is Sarah currently working on?",
+                "question": "What type of writing is Sarah currently working on?",
                 "obj": "David",
                 "answer": "A screenplay",
                 "reason": "Although Sarah was initially working on a novel, the memory was updated on 2024-03-20 when she mentioned switching to writing a screenplay instead."
             },
             {
-                "question asked by Emma": "Where does Sarah currently live?",
+                "question": "Where does Sarah currently live?",
                 "obj": "David",
                 "answer": "San Francisco, specifically in the Mission District",
                 "reason": "Sarah's location was updated from Portland to San Francisco's Mission District, as mentioned in the memories from 2024-02-15 and confirmed in 2024-03-20."
@@ -3259,25 +3259,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what's Alex's current job?",
+                "question": "Hey Sarah, what's Alex's current job?",
                 "obj": "Sarah",
                 "answer": "Alex works at Microsoft",
                 "reason": "While Alex was initially working as a part-time barista at Starbucks, the memory was updated on 2024-01-25 when Alex got a job at Microsoft with a $95K salary."
             },
             {
-                "question asked by Chris": "Where does Alex live now?",
+                "question": "Where does Alex live now?",
                 "obj": "Sarah",
                 "answer": "Alex lives on Maple Drive",
                 "reason": "Alex's residence has been updated twice: initially living on Oak Street, then moving to a new apartment on Maple Drive as confirmed in the memory from 2024-02-15."
             },
             {
-                "question asked by Chris": "What's Sarah's relationship status?",
+                "question": "What's Sarah's relationship status?",
                 "obj": "Alex",
                 "answer": "Sarah is engaged to Tom and planning a wedding for June",
                 "reason": "The memory was updated on 2024-01-10 when Sarah got engaged to Tom, and further details about their June wedding plans were added on 2024-01-25."
             },
             {
-                "question asked by Chris": "What's Alex's current rent?",
+                "question": "What's Alex's current rent?",
                 "obj": "Sarah",
                 "answer": "$2000",
                 "reason": "While Alex's initial rent was $1200 at Oak Street, it was updated to $2000 when they moved to a bigger apartment after getting the Microsoft job, as mentioned in the memory from 2024-01-25."
@@ -3331,19 +3331,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Sarah, what is Alex's current living situation?",
+                "question": "Hi Sarah, what is Alex's current living situation?",
                 "obj": "Sarah",
                 "answer": "Alex is living in a larger apartment with one roommate near Stanford campus",
                 "reason": "While Alex initially lived in a studio apartment, the memory was updated on 2024-02-15 when they moved to a larger apartment with two roommates, and then further updated on 2024-03-01 when one roommate moved out."
             },
             {
-                "question asked by Charlie": "What is Alex's current research focus?",
+                "question": "What is Alex's current research focus?",
                 "obj": "Sarah",
                 "answer": "Alex is currently researching biochemistry",
                 "reason": "Although Alex initially started research in sustainable materials (updated on 2024-02-15), this was changed to biochemistry as per the memory update on 2024-03-01."
             },
             {
-                "question asked by Charlie": "What's Sarah's current position at Berkeley?",
+                "question": "What's Sarah's current position at Berkeley?",
                 "obj": "Alex",
                 "answer": "Sarah is an Associate Professor at Berkeley",
                 "reason": "While Sarah was initially introduced as a teacher, her status was updated on 2024-02-15 when she was promoted to Associate Professor."
@@ -3397,19 +3397,19 @@
         },
         "queries": [
             {
-                "question asked by Mark": "What program is John currently studying?",
+                "question": "What program is John currently studying?",
                 "obj": "Sarah",
                 "answer": "Biology",
                 "reason": "While John initially started in Chemistry on 2024-01-20, he transferred to Biology as confirmed in the memory from 2024-02-15."
             },
             {
-                "question asked by Mark": "What's the current status of Sarah's novel?",
+                "question": "What's the current status of Sarah's novel?",
                 "obj": "John",
                 "answer": "She completed the draft (300 pages) but is now doing major revisions, particularly rewriting the middle section",
                 "reason": "The memory progressed from Sarah being stuck at chapter 10 (2024-01-20), to completing a 300-page draft (2024-02-05), and finally to doing major revisions (2024-02-15)."
             },
             {
-                "question asked by Mark": "How was John feeling about his studies at the beginning versus now?",
+                "question": "How was John feeling about his studies at the beginning versus now?",
                 "obj": "Sarah",
                 "answer": "He was initially adjusting to lab work in Chemistry and seemed uncertain, but now he's feeling better after switching to Biology",
                 "reason": "The memory shows a progression from John 'adjusting to lab work' in Chemistry (2024-01-20), to feeling unsatisfied and switching (2024-02-05), to finally feeling better about the change to Biology (2024-02-15)."
@@ -3454,19 +3454,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Emma, where does David currently live?",
+                "question": "Hey Emma, where does David currently live?",
                 "obj": "Emma",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-20, David moved from Pine Avenue to Oak Street, and this was reinforced in later conversations where he mentioned the commute from Oak Street."
             },
             {
-                "question asked by Charlie": "What's David's current work arrangement?",
+                "question": "What's David's current work arrangement?",
                 "obj": "Emma",
                 "answer": "Hybrid work mode, three days in office",
                 "reason": "While David initially worked remotely, his work arrangement was updated on 2024-02-05 when he got promoted to Senior Engineer and switched to hybrid work, requiring three days in office. This was confirmed as his current status on 2024-03-10."
             },
             {
-                "question asked by Charlie": "Emma, what's your current relationship status?",
+                "question": "Emma, what's your current relationship status?",
                 "obj": "Emma",
                 "answer": "Engaged, planning a wedding for October 15th",
                 "reason": "Emma's status changed from single to engaged as mentioned on 2024-01-20, and the wedding date was later set as mentioned in the 2024-03-10 conversation."
@@ -3511,19 +3511,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What is David's current occupation?",
+                "question": "What is David's current occupation?",
                 "obj": "Emma",
                 "answer": "David is currently in a teaching certification program",
                 "reason": "While David initially worked at a software company, his career status was updated on 2024-02-05 when he got accepted into a teaching program, and further confirmed on 2024-03-10 when he mentioned completing his first week of teaching training."
             },
             {
-                "question asked by Charlie": "What is Emma's current job?",
+                "question": "What is Emma's current job?",
                 "obj": "David",
                 "answer": "Emma is now a lead photographer at a magazine",
                 "reason": "Emma's employment status changed from freelance photographer to lead photographer at a magazine, as updated on 2024-02-05 when she accepted the permanent position, and confirmed on 2024-03-10 when she mentioned her first cover shoot."
             },
             {
-                "question asked by Charlie": "Where does David live?",
+                "question": "Where does David live?",
                 "obj": "Emma",
                 "answer": "David lives in an apartment downtown",
                 "reason": "According to the first memory entry on 2024-01-20, David moved into a new apartment downtown with a city view, and this hasn't been updated in subsequent conversations."
@@ -3571,19 +3571,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Where does Alex currently live?",
+                "question": "Where does Alex currently live?",
                 "obj": "Ben",
                 "answer": "Garden View apartments",
                 "reason": "While Alex initially lived on Oak Street (2024-01-20), the memory was updated on 2024-03-10 when Alex mentioned moving to Garden View apartments to be closer to their new workplace."
             },
             {
-                "question asked by Charlie": "What is Alex's current job?",
+                "question": "What is Alex's current job?",
                 "obj": "Ben",
                 "answer": "Product Manager at CloudCo",
                 "reason": "Although Alex started as a software engineer at StartupX (2024-01-20), the memory was updated on 2024-02-05 when Alex accepted a new position as a Product Manager at CloudCo."
             },
             {
-                "question asked by Charlie": "What is Ben's current job status?",
+                "question": "What is Ben's current job status?",
                 "obj": "Alex",
                 "answer": "Senior Developer at Tech Corp",
                 "reason": "Ben initially got a job at Tech Corp (2024-02-05), but the memory was updated on 2024-03-10 when Ben mentioned getting promoted to Senior Developer."
@@ -3631,19 +3631,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Maria, what's Alex's current relationship status?",
+                "question": "Hi Maria, what's Alex's current relationship status?",
                 "obj": "Maria",
                 "answer": "Alex is dating Lisa from the campus coffee shop",
                 "reason": "While Alex's relationship status changed multiple times (single -> dating Emma -> single -> dating Lisa), the most recent update from 2024-03-20 indicates he is dating Lisa."
             },
             {
-                "question asked by Charlie": "What is Alex's current field of research?",
+                "question": "What is Alex's current field of research?",
                 "obj": "Maria",
                 "answer": "Biochemistry",
                 "reason": "Alex initially started in Chemistry, but on 2024-02-15 he mentioned considering switching to biochemistry, and this change was confirmed on 2024-03-20 when he officially changed his research focus."
             },
             {
-                "question asked by Charlie": "Where is Maria currently living?",
+                "question": "Where is Maria currently living?",
                 "obj": "Alex",
                 "answer": "Boston, but she's moving to Seattle soon",
                 "reason": "The initial memory shows Maria working in Boston, and in the most recent conversation (2024-03-20), she mentioned she's moving to Seattle next month with David."
@@ -3697,19 +3697,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi James, are you still taking the photography course?",
+                "question": "Hi James, are you still taking the photography course?",
                 "obj": "James",
                 "answer": "Yes",
                 "reason": "While James initially dropped the course due to evening shifts (2024-01-20), the memory was updated on 2024-02-05 when he switched to morning shifts and rejoined the course."
             },
             {
-                "question asked by Carol": "Sarah, where do you currently do your writing?",
+                "question": "Sarah, where do you currently do your writing?",
                 "obj": "Sarah",
                 "answer": "At home in her study",
                 "reason": "Sarah's writing location changed multiple times - from caf\u00e9 to library, and finally to her home study as mentioned in the last update on 2024-02-05."
             },
             {
-                "question asked by Carol": "James, what camera do you use?",
+                "question": "James, what camera do you use?",
                 "obj": "James",
                 "answer": "A Canon EOS 250D",
                 "reason": "This information was shared on 2024-01-10 and hasn't been updated in subsequent conversations."
@@ -3760,19 +3760,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "What car does John currently own?",
+                "question": "What car does John currently own?",
                 "obj": "Sarah",
                 "answer": "Toyota Corolla",
                 "reason": "While John initially had a blue Honda Civic, then upgraded to a red Tesla Model 3, the most recent memory update from 2024-02-05 indicates he sold the Tesla and now owns a Toyota Corolla."
             },
             {
-                "question asked by Chris": "When is Sarah's wedding date?",
+                "question": "When is Sarah's wedding date?",
                 "obj": "John",
                 "answer": "September 20th",
                 "reason": "Sarah's wedding date was initially planned for June 15th, but the final memory update on 2024-02-05 confirms it was changed to September 20th."
             },
             {
-                "question asked by Chris": "Is John a confident driver now?",
+                "question": "Is John a confident driver now?",
                 "obj": "Sarah",
                 "answer": "Yes",
                 "reason": "The memory shows progression from John learning to drive on 2024-01-10 to passing his driving test on 2024-01-20, indicating he gained confidence and competence in driving."
@@ -3817,19 +3817,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "What kind of photography does Alex specialize in?",
+                "question": "What kind of photography does Alex specialize in?",
                 "obj": "Ben",
                 "answer": "Landscape photography",
                 "reason": "While Alex initially did wedding photography, the memory was updated on 2024-01-20 when he mentioned switching to landscape photography, which was further confirmed by his landscape photography trips and National Geographic contract mentioned on 2024-02-05."
             },
             {
-                "question asked by Carol": "What's Alex's current living situation?",
+                "question": "What's Alex's current living situation?",
                 "obj": "Ben",
                 "answer": "He's my roommate and has signed up for a long-term stay",
                 "reason": "Memory shows progression from Alex living in his own apartment, to agreeing to be Ben's temporary roommate, and finally deciding to extend his stay as mentioned in the 2024-02-05 update."
             },
             {
-                "question asked by Carol": "Do you have any pets in your apartment?",
+                "question": "Do you have any pets in your apartment?",
                 "obj": "Alex",
                 "answer": "Yes, we have a cat named Luna who belongs to Ben",
                 "reason": "This was mentioned in the memory update from 2024-01-20 when Ben adopted Luna, and was further confirmed in 2024-02-05 when it was mentioned that Luna likes Alex."
@@ -3883,19 +3883,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Beth, what's Alex's current job status?",
+                "question": "Hey Beth, what's Alex's current job status?",
                 "obj": "Beth",
                 "answer": "Alex is working as a lead designer at StartUp Inc.",
                 "reason": "While Alex was initially freelancing as a graphic designer, the memory was updated on 2024-02-05 when Alex announced getting hired at StartUp Inc."
             },
             {
-                "question asked by Charlie": "Where does Alex live in the building?",
+                "question": "Where does Alex live in the building?",
                 "obj": "Beth",
                 "answer": "Alex moved to the 3rd floor",
                 "reason": "Initially Alex lived in an unspecified floor when first moving in, but on 2024-02-15, the memory was updated when Alex mentioned moving to the 3rd floor for a bigger unit."
             },
             {
-                "question asked by Charlie": "Can Beth get a cat without causing problems for Alex?",
+                "question": "Can Beth get a cat without causing problems for Alex?",
                 "obj": "Beth",
                 "answer": "No, because Alex is allergic to cats",
                 "reason": "On 2024-02-15, Alex revealed being diagnosed with cat allergies, which updated their health status information."
@@ -3940,19 +3940,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Alex, what camera are you currently using for your photography?",
+                "question": "Hi Alex, what camera are you currently using for your photography?",
                 "obj": "Alex",
                 "answer": "A Sony camera",
                 "reason": "While Alex initially used a Canon camera inherited from his father, the memory was updated on 2024-02-05 when Alex mentioned switching to a new Sony camera."
             },
             {
-                "question asked by Carol": "Sarah, how's your rose garden doing now?",
+                "question": "Sarah, how's your rose garden doing now?",
                 "obj": "Sarah",
                 "answer": "The roses were damaged by frost",
                 "reason": "While Sarah initially had blooming roses (2024-02-05), the memory was updated on 2024-02-15 when she mentioned losing most of her roses to frost."
             },
             {
-                "question asked by Carol": "Alex, are you still taking photography classes?",
+                "question": "Alex, are you still taking photography classes?",
                 "obj": "Alex",
                 "answer": "Alex has progressed from being a student to having his work selected for gallery exhibition",
                 "reason": "The memory shows progression from taking classes (2024-01-20) to achieving recognition with a gallery showcase (2024-02-15), indicating growth in his photography journey."
@@ -4003,19 +4003,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Where does David currently live?",
+                "question": "Where does David currently live?",
                 "obj": "Sarah",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-20, David moved from Pine Avenue to Oak Street, and there have been no subsequent updates about his living situation."
             },
             {
-                "question asked by Chris": "Where does David work now?",
+                "question": "Where does David work now?",
                 "obj": "Sarah",
                 "answer": "InnovateCo",
                 "reason": "While David initially worked at TechCorp, the memory was updated on 2024-02-05 when he got the job at InnovateCo, and was further confirmed on 2024-03-10 when he mentioned loving his new role there."
             },
             {
-                "question asked by Chris": "When is Sarah's wedding?",
+                "question": "When is Sarah's wedding?",
                 "obj": "David",
                 "answer": "September",
                 "reason": "Initially, Sarah set the wedding date for June 15th (2024-02-05), but this was updated on 2024-03-10 when she and Mike decided to postpone it to September due to venue availability."
@@ -4069,19 +4069,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hi Bruce, what's Amy's current job status?",
+                "question": "Hi Bruce, what's Amy's current job status?",
                 "obj": "Bruce",
                 "answer": "Amy is working remotely as a senior designer at DesignHub",
                 "reason": "While Amy initially worked at Creative Studios, her employment status was updated on 2024-02-05 when she started her new remote position at DesignHub."
             },
             {
-                "question asked by Charlie": "Is Amy still dating Tom?",
+                "question": "Is Amy still dating Tom?",
                 "obj": "Bruce",
                 "answer": "No, Amy is single. She broke up with Tom before moving into the building, briefly dated Jack from the coffee shop, but that also didn't work out.",
                 "reason": "The initial memory shows Amy had broken up with Tom, and while she briefly dated Jack (2024-01-20), that relationship ended as mentioned in the 2024-02-05 update."
             },
             {
-                "question asked by Charlie": "Bruce, what pets do you have?",
+                "question": "Bruce, what pets do you have?",
                 "obj": "Bruce",
                 "answer": "I have a cat named Luna",
                 "reason": "Bruce adopted Luna as mentioned in the memory update from 2024-01-20."
@@ -4129,19 +4129,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where is David working now?",
+                "question": "Hey Sarah, where is David working now?",
                 "obj": "Sarah",
                 "answer": "InnovateCo",
                 "reason": "While David initially worked at TechCorp, the memory updated on 2024-02-05 shows he accepted a position at InnovateCo, which was further confirmed in the 2024-03-10 conversation."
             },
             {
-                "question asked by Chris": "Where does David currently live?",
+                "question": "Where does David currently live?",
                 "obj": "Sarah",
                 "answer": "East Side district",
                 "reason": "Though David initially moved downtown (2024-01-20), the memory was updated on 2024-03-10 when he mentioned moving to the East Side district to be closer to his new office."
             },
             {
-                "question asked by Chris": "Does David have any pets?",
+                "question": "Does David have any pets?",
                 "obj": "Sarah",
                 "answer": "Yes, a cat named Luna",
                 "reason": "According to the memory from 2024-02-05, David got a cat named Luna after settling into his apartment, and the 2024-03-10 update confirmed Luna had adjusted well to living with him."
@@ -4192,19 +4192,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where does Alex live now?",
+                "question": "Hey Sarah, where does Alex live now?",
                 "obj": "Sarah",
                 "answer": "Alex lives in a bigger apartment with a roommate",
                 "reason": "While Alex initially lived in a tiny studio apartment, the memory was updated on 2024-02-15 when Alex mentioned moving to a bigger apartment with a roommate, and this was confirmed on 2024-03-01 when mentioned being fully settled there."
             },
             {
-                "question asked by Chris": "Is Alex still allergic to cats?",
+                "question": "Is Alex still allergic to cats?",
                 "obj": "Sarah",
                 "answer": "No, Alex's cat allergies are mostly gone now",
                 "reason": "The memory shows a progression from being allergic and starting immunotherapy (2024-01-20), to symptoms being almost gone (2024-02-15), and finally being able to adopt a cat named Darwin (2024-03-01)."
             },
             {
-                "question asked by Chris": "What's the current status of your novel, Sarah?",
+                "question": "What's the current status of your novel, Sarah?",
                 "obj": "Sarah",
                 "answer": "The novel has been accepted by a publisher",
                 "reason": "Sarah's novel progress updated from being worked on (2024-01-20), to completing first draft (2024-02-15), and finally being accepted by a publisher (2024-03-01)."
@@ -4258,19 +4258,19 @@
         },
         "queries": [
             {
-                "question asked by Claire": "Where does Sarah currently work?",
+                "question": "Where does Sarah currently work?",
                 "obj": "John",
                 "answer": "UC Berkeley's Biology department",
                 "reason": "While Sarah initially worked as a high school teacher in Denver, her employment status was updated on 2024-02-05 when she accepted a position at UC Berkeley, and was confirmed when she mentioned being settled in Berkeley on 2024-03-10."
             },
             {
-                "question asked by Claire": "What is Sarah's current relationship status?",
+                "question": "What is Sarah's current relationship status?",
                 "obj": "Sarah",
                 "answer": "Single",
                 "reason": "Though Sarah was dating Tom as mentioned on 2024-02-05, the memory was updated on 2024-03-10 when she mentioned breaking up with him."
             },
             {
-                "question asked by Claire": "What is John's current relationship status?",
+                "question": "What is John's current relationship status?",
                 "obj": "John",
                 "answer": "Dating Emma from his research group",
                 "reason": "While John was initially single and focusing on research (2024-02-05), this was updated on 2024-03-10 when he mentioned he started dating Emma from his research group."
@@ -4318,19 +4318,19 @@
         },
         "queries": [
             {
-                "question asked by Mark": "What is Sarah's current job role?",
+                "question": "What is Sarah's current job role?",
                 "obj": "John",
                 "answer": "Senior researcher in Google's AI research team",
                 "reason": "While Sarah initially worked as a software engineer at Google, her role was updated twice: first when she joined the AI research team (2024-02-15), and then when she was promoted to senior researcher (2024-03-01)."
             },
             {
-                "question asked by Mark": "What field is John studying for his PhD?",
+                "question": "What field is John studying for his PhD?",
                 "obj": "Sarah",
                 "answer": "Neuroscience, focusing on brain-computer interfaces",
                 "reason": "Although John initially started in biology (2024-01-20), he switched to neuroscience (confirmed on 2024-02-15), and later specified his focus on brain-computer interfaces (2024-03-01)."
             },
             {
-                "question asked by Mark": "Where does John currently live?",
+                "question": "Where does John currently live?",
                 "obj": "Sarah",
                 "answer": "Palo Alto",
                 "reason": "As mentioned in the conversation on 2024-01-20, John moved from Boston to Palo Alto, and there have been no updates about further moves."
@@ -4384,19 +4384,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where is Mark living now?",
+                "question": "Hey Sarah, where is Mark living now?",
                 "obj": "Sarah",
                 "answer": "Mark is living in a house in the suburbs",
                 "reason": "While Mark initially lived downtown, then temporarily faced housing uncertainty, the memory was updated on 2024-03-10 when he mentioned moving to a house in the suburbs."
             },
             {
-                "question asked by Chris": "What is Sarah's current occupation?",
+                "question": "What is Sarah's current occupation?",
                 "obj": "Mark",
                 "answer": "Sarah is now a full-time photographer",
                 "reason": "Initially Sarah was both a photographer and part-time teacher, but as per the last memory update on 2024-03-10, she quit teaching to pursue photography full-time."
             },
             {
-                "question asked by Chris": "What kind of photography does Sarah do?",
+                "question": "What kind of photography does Sarah do?",
                 "obj": "Sarah",
                 "answer": "I do urban architecture photography",
                 "reason": "As mentioned in the memory from 2024-01-20, Sarah switched from wildlife photography to urban architecture photography."
@@ -4447,19 +4447,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Sarah, what's Alex's relationship status?",
+                "question": "Hey Sarah, what's Alex's relationship status?",
                 "obj": "Sarah",
                 "answer": "Alex is in a committed relationship with Emma",
                 "reason": "While Alex was initially single on 2024-01-20, the memory was updated on 2024-02-15 when Alex started dating Emma, and then further updated on 2024-03-01 when they made their relationship official."
             },
             {
-                "question asked by Charlie": "What instrument is Alex learning, and how's their progress?",
+                "question": "What instrument is Alex learning, and how's their progress?",
                 "obj": "Sarah",
                 "answer": "Alex is learning piano and has progressed from 'Twinkle Twinkle Little Star' to 'Fur Elise', and is now planning a duet performance",
                 "reason": "The memory shows progression from beginning piano on 2024-01-20, advancing to 'Fur Elise' on 2024-02-15, and planning a duet performance by 2024-03-01."
             },
             {
-                "question asked by Charlie": "What's Sarah's current relationship status?",
+                "question": "What's Sarah's current relationship status?",
                 "obj": "Alex",
                 "answer": "Sarah is single",
                 "reason": "While Sarah was dating Mike as mentioned on 2024-01-20, the memory was updated on 2024-02-15 when Sarah mentioned breaking up with Mike, and there's been no mention of a new relationship since then."
@@ -4510,19 +4510,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What camera is David currently using for his photography?",
+                "question": "What camera is David currently using for his photography?",
                 "obj": "Emma",
                 "answer": "Sony A7III",
                 "reason": "While David initially used a Canon camera, the memory was updated on 2024-02-05 when he upgraded to a Sony A7III."
             },
             {
-                "question asked by Charlie": "What is Emma currently working on writing?",
+                "question": "What is Emma currently working on writing?",
                 "obj": "David",
                 "answer": "A collection of short stories",
                 "reason": "Though Emma was initially writing a novel, the memory was updated on 2024-02-15 when she switched to writing short stories instead."
             },
             {
-                "question asked by Charlie": "Does Emma have any pets?",
+                "question": "Does Emma have any pets?",
                 "obj": "David",
                 "answer": "Yes, an orange tabby cat named Milo",
                 "reason": "The memory shows that Emma adopted Milo, an orange tabby cat, as mentioned in the conversation on 2024-02-05."
@@ -4576,19 +4576,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Tom, what's your current research focus at Stanford?",
+                "question": "Hi Tom, what's your current research focus at Stanford?",
                 "obj": "Tom",
                 "answer": "Freshwater ecosystems",
                 "reason": "While Tom initially studied marine ecosystems and coral reefs, his research focus was updated on 2024-02-15 when he switched to freshwater ecosystems."
             },
             {
-                "question asked by Carol": "Sarah, are you still working night shifts at the hospital?",
+                "question": "Sarah, are you still working night shifts at the hospital?",
                 "obj": "Sarah",
                 "answer": "No, she works day shifts now",
                 "reason": "The memory was updated on 2024-03-01 when Sarah mentioned switching to day shifts for better work-life balance."
             },
             {
-                "question asked by Carol": "Is Tom still in his PhD program?",
+                "question": "Is Tom still in his PhD program?",
                 "obj": "Tom",
                 "answer": "Yes, he is continuing his PhD after considering quitting",
                 "reason": "While Tom considered quitting on 2024-03-01, the memory was updated in the same conversation when he decided to continue with a short break."
@@ -4645,19 +4645,19 @@
         },
         "queries": [
             {
-                "question asked by Claire": "Hi Sarah, what's your current relationship status?",
+                "question": "Hi Sarah, what's your current relationship status?",
                 "obj": "Sarah",
                 "answer": "Dating Michael",
                 "reason": "While Sarah was initially single after breaking up with Tom (2024-01-20), the memory was updated on 2024-02-05 when she started dating Michael from the coffee shop/vet."
             },
             {
-                "question asked by Claire": "John, is Luna an outdoor cat?",
+                "question": "John, is Luna an outdoor cat?",
                 "obj": "John",
                 "answer": "No, strictly indoor",
                 "reason": "While Luna was initially allowed outdoors, this changed on 2024-02-15 after she ran away. John updated his policy to keep her strictly indoors with cat trees for entertainment."
             },
             {
-                "question asked by Claire": "Where does John live now?",
+                "question": "Where does John live now?",
                 "obj": "John",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-20, John moved from Pine Avenue to Oak Street."
@@ -4711,19 +4711,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "How is Alex's ankle doing now?",
+                "question": "How is Alex's ankle doing now?",
                 "obj": "Beth",
                 "answer": "Alex's ankle is fully healed",
                 "reason": "While Alex initially had an ankle injury on 2024-01-20, the memory was updated on 2024-02-05 when Alex mentioned being fully healed and starting light exercises."
             },
             {
-                "question asked by Carol": "What musical instrument is Beth currently learning?",
+                "question": "What musical instrument is Beth currently learning?",
                 "obj": "Alex",
                 "answer": "Guitar",
                 "reason": "Although Beth initially started learning piano on 2024-01-20, the memory was updated on 2024-02-15 when she mentioned switching from piano to guitar."
             },
             {
-                "question asked by Carol": "What pets do Alex and Beth have?",
+                "question": "What pets do Alex and Beth have?",
                 "obj": "Beth",
                 "answer": "Alex has a cat named Luna, and I have a dog named Charlie",
                 "reason": "The memory shows Alex adopted Luna on 2024-02-05, and Beth adopted Charlie on 2024-02-15."
@@ -4777,19 +4777,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hey Brian, where does Alex currently live?",
+                "question": "Hey Brian, where does Alex currently live?",
                 "obj": "Brian",
                 "answer": "River District",
                 "reason": "While Alex initially lived in Downtown at Skyline Towers, the memory was updated on 2024-02-20 when Alex mentioned moving to River District due to plumbing issues in the previous apartment."
             },
             {
-                "question asked by Carol": "What's Brian's current job?",
+                "question": "What's Brian's current job?",
                 "obj": "Alex",
                 "answer": "Microsoft",
                 "reason": "The memory shows that Brian initially worked at a tech startup but updated his employment status on 2024-02-05 when he accepted and announced taking the Microsoft offer."
             },
             {
-                "question asked by Carol": "What's Alex's current position at the hospital?",
+                "question": "What's Alex's current position at the hospital?",
                 "obj": "Brian",
                 "answer": "Head Nurse in the ER",
                 "reason": "While Alex initially started as an ER nurse, the memory was updated on 2024-02-05 when Alex announced the promotion to Head Nurse position."
@@ -4843,19 +4843,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "What is Alex's current job?",
+                "question": "What is Alex's current job?",
                 "obj": "Ben",
                 "answer": "3rd grade teacher at Pine Elementary",
                 "reason": "According to the memory from 2024-02-05, Alex got hired at Pine Elementary as a 3rd grade teacher, updating their previous status of looking for work."
             },
             {
-                "question asked by Carol": "What is Ben's current position at work?",
+                "question": "What is Ben's current position at work?",
                 "obj": "Alex",
                 "answer": "Senior engineer at TechCorp",
                 "reason": "While Ben was initially introduced as a software engineer, his status was updated on 2024-02-05 when he got promoted to senior engineer."
             },
             {
-                "question asked by Carol": "How is Alex's health now?",
+                "question": "How is Alex's health now?",
                 "obj": "Ben",
                 "answer": "Healthy and back at work",
                 "reason": "Though Alex was sick with a cold on 2024-02-15, the memory was updated in the same conversation indicating they were feeling better and returning to work the next day."
@@ -4909,19 +4909,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where does David currently live?",
+                "question": "Hey Sarah, where does David currently live?",
                 "obj": "Sarah",
                 "answer": "David lives on Oak Street",
                 "reason": "According to the memory from 2024-01-20, David moved from Pine Avenue to Oak Street, and there have been no subsequent updates about his living situation."
             },
             {
-                "question asked by Chris": "What shift does David work at the hospital?",
+                "question": "What shift does David work at the hospital?",
                 "obj": "Sarah",
                 "answer": "David works night shifts as a head nurse",
                 "reason": "While David initially worked morning shifts (2024-01-20), this was updated on 2024-02-05 when he switched to night shifts, and further updated on 2024-03-10 when he was promoted to head nurse on the night shift."
             },
             {
-                "question asked by Chris": "What's Sarah's current educational status?",
+                "question": "What's Sarah's current educational status?",
                 "obj": "David",
                 "answer": "Sarah completed her Master's degree and is applying for PhD programs",
                 "reason": "Sarah's status evolved from working on her thesis (2024-01-20) to submitting it (2024-02-05), then passing her defense and getting her Master's degree, and finally applying for PhD programs (2024-03-10)."
@@ -4983,25 +4983,25 @@
         },
         "queries": [
             {
-                "question asked by Claire": "Hi Sarah, what kind of photography did Tom initially focus on?",
+                "question": "Hi Sarah, what kind of photography did Tom initially focus on?",
                 "obj": "Sarah",
                 "answer": "Landscapes and street photography",
                 "reason": "According to the memory from 2024-01-20, Tom mentioned he was shooting mainly landscapes and street photos as a beginner."
             },
             {
-                "question asked by Claire": "Tom, how is Sarah's knee condition now?",
+                "question": "Tom, how is Sarah's knee condition now?",
                 "obj": "Tom",
                 "answer": "Sarah has recovered and is back to normal",
                 "reason": "While Sarah initially had a knee injury from skiing (2024-01-20), the memory was updated on 2024-02-05 where she confirmed that physical therapy helped and she's back to normal."
             },
             {
-                "question asked by Claire": "Sarah, is Tom currently sick?",
+                "question": "Sarah, is Tom currently sick?",
                 "obj": "Sarah",
                 "answer": "No, Tom has recovered from his flu",
                 "reason": "While Tom was sick with the flu on 2024-03-01, the memory was updated on 2024-03-10 where he confirmed he had recovered and was back to photography."
             },
             {
-                "question asked by Claire": "Tom, what type of photography do you currently specialize in?",
+                "question": "Tom, what type of photography do you currently specialize in?",
                 "obj": "Tom",
                 "answer": "Wedding photography",
                 "reason": "While Tom started with landscapes and street photography, the memory was updated on 2024-02-05 when he switched his focus to wedding photography, and this was reinforced by his continued work on wedding test shoots mentioned on 2024-03-01."
@@ -5055,19 +5055,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Ben, what's Alex's current salary?",
+                "question": "Hey Ben, what's Alex's current salary?",
                 "obj": "Ben",
                 "answer": "$120K",
                 "reason": "While Alex initially had a salary of $90K at TechCorp, the memory was updated on 2024-03-10 when Alex accepted a new position at GlobalTech with a salary of $120K."
             },
             {
-                "question asked by Charlie": "What company does Alex work for now?",
+                "question": "What company does Alex work for now?",
                 "obj": "Ben",
                 "answer": "GlobalTech",
                 "reason": "According to the most recent memory update on 2024-03-10, Alex left TechCorp and accepted an offer from GlobalTech."
             },
             {
-                "question asked by Charlie": "What is Ben's current position?",
+                "question": "What is Ben's current position?",
                 "obj": "Alex",
                 "answer": "Senior Developer",
                 "reason": "Based on the memory from 2024-02-05, Ben got promoted to Senior Developer at DataFirm."
@@ -5121,19 +5121,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What's Alex's current job position?",
+                "question": "What's Alex's current job position?",
                 "obj": "Ben",
                 "answer": "Team lead",
                 "reason": "While Alex started as a junior developer and was promoted to senior developer, the most recent memory update from 2024-02-20 shows they switched to a team lead position."
             },
             {
-                "question asked by Charlie": "Is Ben still working remotely due to his leg?",
+                "question": "Is Ben still working remotely due to his leg?",
                 "obj": "Alex",
                 "answer": "No",
                 "reason": "Initially Ben was working remotely due to a broken leg, but the memory was updated on 2024-02-05 when Ben mentioned his leg was healed and he returned to the office."
             },
             {
-                "question asked by Charlie": "Where does Alex currently live?",
+                "question": "Where does Alex currently live?",
                 "obj": "Ben",
                 "answer": "Seattle",
                 "reason": "While Alex initially lived downtown (location unspecified), the memory was updated on 2024-02-05 when Alex mentioned relocating to Seattle, and this was confirmed in the 2024-02-20 conversation about Seattle weather."
@@ -5181,19 +5181,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "What is Jack's current job and salary?",
+                "question": "What is Jack's current job and salary?",
                 "obj": "Sarah",
                 "answer": "Jack is a senior developer at Tech Solutions with a salary of $95,000",
                 "reason": "This information was updated on 2024-02-05 when Jack announced his new job and salary details."
             },
             {
-                "question asked by Chris": "How much is Jack's current rent?",
+                "question": "How much is Jack's current rent?",
                 "obj": "Sarah",
                 "answer": "$1500",
                 "reason": "While Jack's initial rent was $1200 when he first moved in, this was updated on 2024-02-05 when he mentioned his rent increased to $1500."
             },
             {
-                "question asked by Chris": "What is Sarah's current position and salary?",
+                "question": "What is Sarah's current position and salary?",
                 "obj": "Jack",
                 "answer": "Sarah is now an Art Director at Creative Studios with a salary of $85,000",
                 "reason": "This was updated on 2024-02-15 when Sarah announced her promotion from graphic designer to Art Director, along with her salary increase."
@@ -5247,19 +5247,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What camera is Alex currently using?",
+                "question": "What camera is Alex currently using?",
                 "obj": "Maya",
                 "answer": "Sony A7III",
                 "reason": "While Alex initially used a Canon camera, the memory was updated on 2024-02-05 when Alex got a new Sony A7III camera, which was still in use but needed repairs as mentioned on 2024-02-15."
             },
             {
-                "question asked by Charlie": "What is Maya's current teaching status?",
+                "question": "What is Maya's current teaching status?",
                 "obj": "Alex",
                 "answer": "Full-time instructor at the art institute",
                 "reason": "Maya's status changed from part-time instructor with a wrist injury (2024-01-20) to returning to teaching (2024-02-05), and finally to teaching full-time at the institute as updated in the memory from 2024-02-05."
             },
             {
-                "question asked by Charlie": "Is Alex's Sony camera working properly now?",
+                "question": "Is Alex's Sony camera working properly now?",
                 "obj": "Maya",
                 "answer": "Yes",
                 "reason": "According to the memory from 2024-02-15, while Alex had a focusing issue that required repairs, it was fixed as indicated in their conversation."
@@ -5313,19 +5313,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Hey Blake, where is Alex working now?",
+                "question": "Hey Blake, where is Alex working now?",
                 "obj": "Blake",
                 "answer": "Google",
                 "reason": "While Alex initially worked at a marketing firm, the memory was updated on 2024-02-05 when Alex accepted a job at Google, and this was confirmed on 2024-02-25 when Alex mentioned completing their first week there."
             },
             {
-                "question asked by Charlie": "How's Blake's piano journey going? Who's teaching them?",
+                "question": "How's Blake's piano journey going? Who's teaching them?",
                 "obj": "Blake",
                 "answer": "Blake is taking advanced lessons with a teacher named Sarah",
                 "reason": "The memory shows progression from initially starting piano on 2024-01-20, then switching teachers, and finally taking advanced lessons with Sarah as mentioned in the latest update on 2024-02-25."
             },
             {
-                "question asked by Charlie": "How's Alex's work-life balance now?",
+                "question": "How's Alex's work-life balance now?",
                 "obj": "Alex",
                 "answer": "Much better, leaving work on time and going to the gym",
                 "reason": "There was a clear update from being stressed and working overtime at the marketing firm (2024-01-20) to having better work-life balance at Google, even resuming gym activities (2024-02-25)."
@@ -5382,19 +5382,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what's David's current job status?",
+                "question": "Hey Sarah, what's David's current job status?",
                 "obj": "Sarah",
                 "answer": "David is a team lead at Microsoft",
                 "reason": "While David was initially a freelance developer, his employment status was updated twice: first when he got the Microsoft job (2024-02-05), and then when he was promoted to team lead (2024-03-15)."
             },
             {
-                "question asked by Chris": "What instrument does Sarah play, and when did she start?",
+                "question": "What instrument does Sarah play, and when did she start?",
                 "obj": "David",
                 "answer": "Sarah plays piano and started taking lessons on Wednesdays since January 2024",
                 "reason": "This information was introduced in the first conversation (2024-01-20) and was confirmed to be ongoing in March when Sarah mentioned completing her first song."
             },
             {
-                "question asked by Chris": "Where does David live and does he have any pets?",
+                "question": "Where does David live and does he have any pets?",
                 "obj": "Sarah",
                 "answer": "David lives in a downtown apartment and has a cat named Luna",
                 "reason": "David's living situation was established in the first conversation (2024-01-20), and his cat Luna was mentioned in the second conversation (2024-02-05)."
@@ -5448,19 +5448,19 @@
         },
         "queries": [
             {
-                "question asked by Claire": "What is Sarah's current field of study?",
+                "question": "What is Sarah's current field of study?",
                 "obj": "Mike",
                 "answer": "Computer Science",
                 "reason": "While Sarah initially started in Chemistry at Stanford, the memory was updated on 2024-02-15 when she switched to Computer Science, and this was reinforced on 2024-03-01 when she mentioned enjoying the CS program."
             },
             {
-                "question asked by David": "What's the current status of Mike's startup?",
+                "question": "What's the current status of Mike's startup?",
                 "obj": "Sarah",
                 "answer": "They've secured Series A funding ($5 million), are no longer in stealth mode, have an office in Mountain View on Castro Street, and have 20 employees",
                 "reason": "The startup's status evolved from seed funding and stealth mode (2024-01-10) to securing Series A funding and going public (2024-02-15), and finally to having a specific office location and employee count (2024-03-01)."
             },
             {
-                "question asked by Tom": "Where did Sarah move from originally?",
+                "question": "Where did Sarah move from originally?",
                 "obj": "Mike",
                 "answer": "Boston",
                 "reason": "From the first conversation on 2024-01-10, Sarah mentioned moving from Boston to start her PhD at Stanford."
@@ -5514,19 +5514,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Does David still have his cat Luna?",
+                "question": "Does David still have his cat Luna?",
                 "obj": "Sarah",
                 "answer": "No, Luna passed away",
                 "reason": "While David initially had a cat named Luna, the memory was updated on 2024-02-15 when David informed that Luna had passed away the previous week."
             },
             {
-                "question asked by Carol": "Where does Sarah currently work?",
+                "question": "Where does Sarah currently work?",
                 "obj": "David",
                 "answer": "Roosevelt High School",
                 "reason": "Sarah's employment status was updated from Lincoln Elementary to Roosevelt High School on 2024-02-05, and was further confirmed on 2024-02-15 when they discussed her new teaching job."
             },
             {
-                "question asked by Carol": "What pets do David and Sarah have now?",
+                "question": "What pets do David and Sarah have now?",
                 "obj": "Sarah",
                 "answer": "I have a rescue dog named Charlie, and David currently has no pets",
                 "reason": "Based on the memory updates, Sarah adopted Charlie on 2024-02-05, and David no longer has any pets since Luna's passing on 2024-02-15."
@@ -5566,19 +5566,19 @@
         },
         "queries": [
             {
-                "question asked by Claire": "Hi Sarah, where does Mark currently live?",
+                "question": "Hi Sarah, where does Mark currently live?",
                 "obj": "Sarah",
                 "answer": "Maple Street",
                 "reason": "While Mark initially lived on Oak Street, his location was updated on 2024-01-15 when he mentioned moving to Maple Street due to issues with the Oak Street apartment."
             },
             {
-                "question asked by Claire": "What department does Sarah work in at the hospital?",
+                "question": "What department does Sarah work in at the hospital?",
                 "obj": "Mark",
                 "answer": "Pediatric department",
                 "reason": "Sarah's work location was updated on 2024-01-15 when she mentioned being transferred from emergency care to the pediatric department."
             },
             {
-                "question asked by Claire": "What kind of car does Mark drive?",
+                "question": "What kind of car does Mark drive?",
                 "obj": "Sarah",
                 "answer": "Toyota",
                 "reason": "Mark's car status was updated on 2024-01-10 when he mentioned replacing his old Honda with a new Toyota, and this was reinforced on 2024-01-15 when he mentioned enjoying his Toyota."
@@ -5634,19 +5634,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Where does Alex currently live?",
+                "question": "Where does Alex currently live?",
                 "obj": "Ben",
                 "answer": "Boston",
                 "reason": "While Alex initially lived in the university dorm, the memory was updated on 2024-02-10 when Alex mentioned moving to Boston for the new job at TechCorp."
             },
             {
-                "question asked by Carol": "What's Ben's current living situation?",
+                "question": "What's Ben's current living situation?",
                 "obj": "Alex",
                 "answer": "Ben lives on Oak Street with his cousin Mike as a roommate",
                 "reason": "Based on the memories, Ben moved to Oak Street on 2024-01-20, and the situation was updated on 2024-02-15 when he mentioned his cousin Mike moving in as a roommate."
             },
             {
-                "question asked by Carol": "What's Alex's current job?",
+                "question": "What's Alex's current job?",
                 "obj": "Ben",
                 "answer": "Research scientist at TechCorp",
                 "reason": "The memory shows that Alex's status changed from PhD student to research scientist at TechCorp, as mentioned in the update on 2024-01-25."
@@ -5697,19 +5697,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what kind of writing is David's friend Sarah focusing on now?",
+                "question": "Hey Sarah, what kind of writing is David's friend Sarah focusing on now?",
                 "obj": "Sarah",
                 "answer": "Poetry",
                 "reason": "While Sarah initially was working on a novel, the memory was updated on 2024-02-05 when she mentioned switching to poetry, which was further confirmed by her publishing a poem on 2024-02-15."
             },
             {
-                "question asked by Chris": "What field of chemistry is David currently researching?",
+                "question": "What field of chemistry is David currently researching?",
                 "obj": "David",
                 "answer": "Computational chemistry",
                 "reason": "Though David initially started his PhD program generally in Chemistry, the memory was updated on 2024-02-15 when he mentioned changing his focus from organic chemistry to computational chemistry."
             },
             {
-                "question asked by Chris": "Where does Sarah attend her writing group?",
+                "question": "Where does Sarah attend her writing group?",
                 "obj": "Sarah",
                 "answer": "Bay Area Writers' Circle in San Francisco",
                 "reason": "While Sarah initially was just applying to workshops, the memory was updated on 2024-02-05 when she got accepted into the Bay Area Writers' Circle."
@@ -5757,19 +5757,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Sarah, what are you currently writing?",
+                "question": "Hi Sarah, what are you currently writing?",
                 "obj": "Sarah",
                 "answer": "Science fiction",
                 "reason": "While Sarah initially was writing a mystery novel, the memory was updated on 2024-01-20 when she mentioned switching to science fiction."
             },
             {
-                "question asked by Carol": "John, what's your current field of research at Stanford?",
+                "question": "John, what's your current field of research at Stanford?",
                 "obj": "John",
                 "answer": "Neuroscience",
                 "reason": "Although John started in Biology, the memory was updated on 2024-02-05 when he switched his focus to neuroscience, and this was reinforced on 2024-03-15 when he mentioned his neuroscience research."
             },
             {
-                "question asked by Carol": "Sarah, where are you currently living?",
+                "question": "Sarah, where are you currently living?",
                 "obj": "Sarah",
                 "answer": "Paris",
                 "reason": "While Sarah was initially in Chicago, the memory was updated on 2024-02-05 when she accepted a Paris residency, and confirmed on 2024-03-15 when she mentioned being in Paris."
@@ -5826,25 +5826,25 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, where does David currently live?",
+                "question": "Hey Sarah, where does David currently live?",
                 "obj": "Sarah",
                 "answer": "Maple Avenue",
                 "reason": "While David initially lived on Oak Street, the memory was updated on 2024-02-05 when he moved to Maple Avenue due to a pipe burst in his previous apartment."
             },
             {
-                "question asked by Chris": "What kind of painting is David currently focused on?",
+                "question": "What kind of painting is David currently focused on?",
                 "obj": "Sarah",
                 "answer": "Portrait painting",
                 "reason": "David's artistic focus changed from landscape to portrait painting, as mentioned in the memory update on 2024-02-15."
             },
             {
-                "question asked by Chris": "What's Sarah's current position at the hospital?",
+                "question": "What's Sarah's current position at the hospital?",
                 "obj": "David",
                 "answer": "Head nurse",
                 "reason": "Sarah's position was updated on 2024-02-15 when she was promoted from being a regular nurse to head nurse."
             },
             {
-                "question asked by Chris": "What shift does Sarah work at the hospital?",
+                "question": "What shift does Sarah work at the hospital?",
                 "obj": "David",
                 "answer": "Day shift",
                 "reason": "While Sarah initially worked night shifts, the memory was updated on 2024-02-05 when she switched to day shifts."
@@ -5898,19 +5898,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hi Sarah, what subject does John teach at the high school?",
+                "question": "Hi Sarah, what subject does John teach at the high school?",
                 "obj": "Sarah",
                 "answer": "Physics",
                 "reason": "While John initially taught mathematics, the memory was updated on 2024-02-15 when he mentioned switching to teaching physics instead."
             },
             {
-                "question asked by Chris": "Is John still engaged to Emma?",
+                "question": "Is John still engaged to Emma?",
                 "obj": "Sarah",
                 "answer": "No",
                 "reason": "Although John got engaged to Emma as mentioned on 2024-01-10, the memory was updated on 2024-02-15 when they broke off the engagement, and further confirmed by him dating someone new (Lisa) on 2024-03-01."
             },
             {
-                "question asked by Chris": "Where is Sarah currently working?",
+                "question": "Where is Sarah currently working?",
                 "obj": "John",
                 "answer": "MIT",
                 "reason": "While Sarah was initially doing her PhD at Stanford, the memory was updated on 2024-03-01 when she accepted a research position at MIT."
@@ -5964,19 +5964,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Sarah, where does John currently live?",
+                "question": "Hi Sarah, where does John currently live?",
                 "obj": "Sarah",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-20, John moved from Pine Avenue to Oak Street, and there have been no subsequent updates about his living situation."
             },
             {
-                "question asked by Carol": "What kind of paint does John use for his artwork?",
+                "question": "What kind of paint does John use for his artwork?",
                 "obj": "Sarah",
                 "answer": "Acrylics",
                 "reason": "While John initially used watercolors (2024-01-20), the memory was updated on 2024-02-05 when he switched to acrylics."
             },
             {
-                "question asked by Carol": "Is John currently teaching art classes?",
+                "question": "Is John currently teaching art classes?",
                 "obj": "Sarah",
                 "answer": "No, he's currently on a break due to a wrist injury",
                 "reason": "While John started teaching art classes (2024-02-05), the memory was updated on 2024-02-15 when he had to pause due to a wrist injury requiring two weeks of rest."
@@ -6038,19 +6038,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi David, where are you living now?",
+                "question": "Hi David, where are you living now?",
                 "obj": "David",
                 "answer": "Oak Street",
                 "reason": "According to the memory from 2024-01-10, David moved from Pine Avenue to Oak Street, and there have been no subsequent updates about another move."
             },
             {
-                "question asked by Carol": "Emma, what's your current job position?",
+                "question": "Emma, what's your current job position?",
                 "obj": "Emma",
                 "answer": "Investment advisory",
                 "reason": "The memory was updated on 2024-01-15 when Emma got promoted from customer service to investment advisory, and was further confirmed on 2024-01-25 when she mentioned enjoying her new role."
             },
             {
-                "question asked by Carol": "David, do you have any pets?",
+                "question": "David, do you have any pets?",
                 "obj": "David",
                 "answer": "No",
                 "reason": "While David initially adopted a cat named Luna on 2024-01-10, the memory was updated on 2024-01-20 when he had to give Luna to his sister due to her health issues."
@@ -6104,19 +6104,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey David, which camera are you currently using for your photography course?",
+                "question": "Hey David, which camera are you currently using for your photography course?",
                 "obj": "David",
                 "answer": "Canon",
                 "reason": "While David initially used a Canon, then bought Sarah's Sony camera, the memory was updated on 2024-02-05 when the Sony camera was damaged and he returned to using his Canon."
             },
             {
-                "question asked by Chris": "Sarah, what camera did you sell to David?",
+                "question": "Sarah, what camera did you sell to David?",
                 "obj": "Sarah",
                 "answer": "Sony mirrorless camera",
                 "reason": "According to the memory from 2024-01-20, Sarah sold her Sony mirrorless camera with two lenses to David for $500."
             },
             {
-                "question asked by Chris": "David, are you participating in any photography events?",
+                "question": "David, are you participating in any photography events?",
                 "obj": "David",
                 "answer": "Yes, a student exhibition",
                 "reason": "Based on the memory from 2024-01-25, David was selected to display his work at the upcoming student exhibition."
@@ -6164,19 +6164,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "Where does Alex currently live?",
+                "question": "Where does Alex currently live?",
                 "obj": "Beth",
                 "answer": "Maple Avenue",
                 "reason": "While Alex initially lived in university dorms on Campus Drive, the memory was updated on 2024-02-15 when Alex mentioned moving to a shared house on Maple Avenue."
             },
             {
-                "question asked by Charlie": "What is Alex's field of study now?",
+                "question": "What is Alex's field of study now?",
                 "obj": "Beth",
                 "answer": "Physics",
                 "reason": "Alex started in Chemistry (2024-01-20) but switched to Physics as mentioned in the memory update on 2024-02-15."
             },
             {
-                "question asked by Charlie": "What is Beth's current job?",
+                "question": "What is Beth's current job?",
                 "obj": "Alex",
                 "answer": "University preparatory school teacher",
                 "reason": "Beth's occupation was updated from high school teacher to university preparatory school teacher as mentioned in the memory from 2024-03-01."
@@ -6224,19 +6224,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hi Emma, what's David's current work schedule at the hospital?",
+                "question": "Hi Emma, what's David's current work schedule at the hospital?",
                 "obj": "Emma",
                 "answer": "Night shifts",
                 "reason": "While David initially started with day shifts, the memory was updated on 2024-02-05 when he switched to night shifts, and this was confirmed as his current schedule on 2024-03-10 when he mentioned loving the night shifts."
             },
             {
-                "question asked by Carol": "Where does Emma work now?",
+                "question": "Where does Emma work now?",
                 "obj": "David",
                 "answer": "Her own design studio downtown",
                 "reason": "Emma's work location was updated from working from home to owning her own studio downtown, as mentioned in the most recent memory from 2024-03-10."
             },
             {
-                "question asked by Carol": "Where does David live?",
+                "question": "Where does David live?",
                 "obj": "Emma",
                 "answer": "An apartment on Oak Street",
                 "reason": "According to the memory from 2024-01-20, David moved into an apartment on Oak Street, and subsequent memories confirm he still lives there as he mentioned furnishing it."
@@ -6284,19 +6284,19 @@
         },
         "queries": [
             {
-                "question asked by Carol": "Hey Ben, how's Alex's knee condition now?",
+                "question": "Hey Ben, how's Alex's knee condition now?",
                 "obj": "Ben",
                 "answer": "Alex has fully recovered and is back to running",
                 "reason": "While Alex initially had a knee injury on 2024-01-10, the memory was updated on 2024-02-05 showing complete recovery and return to running activities."
             },
             {
-                "question asked by Carol": "Where does Ben currently live?",
+                "question": "Where does Ben currently live?",
                 "obj": "Ben",
                 "answer": "In the suburbs",
                 "reason": "Ben's living situation was updated on 2024-01-20 when he moved from downtown to the suburbs, and this was further confirmed on 2024-02-05 when he mentioned finding running trails near his new suburban home."
             },
             {
-                "question asked by Carol": "Is Alex still worried about the March marathon?",
+                "question": "Is Alex still worried about the March marathon?",
                 "obj": "Alex",
                 "answer": "No, Alex seems confident now",
                 "reason": "While Alex was initially worried about missing the marathon (2024-01-10), the latest memory update shows Alex is back to running and actively training (2024-02-05), indicating the concern has been resolved."
@@ -6350,19 +6350,19 @@
         },
         "queries": [
             {
-                "question asked by Charlie": "What camera is David currently using?",
+                "question": "What camera is David currently using?",
                 "obj": "Sarah",
                 "answer": "Canon EOS R6",
                 "reason": "While David initially used a Nikon D3300, the memory was updated on 2024-02-05 when he purchased Sarah's Canon EOS R6, and this was confirmed in subsequent conversations."
             },
             {
-                "question asked by Charlie": "What is Sarah's current job status?",
+                "question": "What is Sarah's current job status?",
                 "obj": "David",
                 "answer": "Full-time manager at the camera shop",
                 "reason": "Sarah's employment status changed from part-time to full-time manager, as updated in the conversation on 2024-02-05."
             },
             {
-                "question asked by Charlie": "What is David's current professional status?",
+                "question": "What is David's current professional status?",
                 "obj": "Sarah",
                 "answer": "Owner of a photography studio specializing in wedding photography",
                 "reason": "David's status evolved from being a photography student to running his own studio, as updated in the conversation on 2024-03-01."
@@ -6418,19 +6418,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey Sarah, what's David's current relationship status?",
+                "question": "Hey Sarah, what's David's current relationship status?",
                 "obj": "Sarah",
                 "answer": "Single",
                 "reason": "While David started dating Emma on 2024-02-05, the memory was updated on 2024-02-15 when David mentioned breaking up with Emma and returning to single status."
             },
             {
-                "question asked by Chris": "What's Sarah's current position at Lincoln High School?",
+                "question": "What's Sarah's current position at Lincoln High School?",
                 "obj": "David",
                 "answer": "Head of English Department",
                 "reason": "Sarah's position was updated from being a teacher to Head of English Department on 2024-01-20 when she announced her promotion."
             },
             {
-                "question asked by Chris": "Where does David live?",
+                "question": "Where does David live?",
                 "obj": "Sarah",
                 "answer": "On Oak Street",
                 "reason": "According to the memory from 2024-01-10, David moved into an apartment on Oak Street, and this information hasn't been updated in subsequent conversations."
@@ -6484,19 +6484,19 @@
         },
         "queries": [
             {
-                "question asked by Chris": "Hey John, where do you currently live?",
+                "question": "Hey John, where do you currently live?",
                 "obj": "John",
                 "answer": "Maple Drive",
                 "reason": "While John initially lived on Oak Street, the memory was updated on 2024-02-15 when he mentioned moving to Maple Drive, and this was confirmed on 2024-03-10."
             },
             {
-                "question asked by Chris": "Sarah, what's your current research focus in your PhD?",
+                "question": "Sarah, what's your current research focus in your PhD?",
                 "obj": "Sarah",
                 "answer": "Deep-sea organisms",
                 "reason": "Sarah's research focus changed from coral reefs to deep-sea organisms as mentioned on 2024-01-20, and this was confirmed in subsequent conversations on 2024-02-15 and 2024-03-10 when she successfully defended her thesis in this area."
             },
             {
-                "question asked by Chris": "Sarah, what's your current academic status?",
+                "question": "Sarah, what's your current academic status?",
                 "obj": "Sarah",
                 "answer": "Dr. Sarah (PhD completed)",
                 "reason": "While Sarah was initially working on her PhD thesis, the memory was updated on 2024-03-10 when she successfully defended her thesis and became Dr. Sarah."
