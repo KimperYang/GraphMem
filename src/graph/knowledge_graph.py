@@ -29,7 +29,7 @@ class SemanticKnowledgeGraph:
 
             return {
                 'conflict': True,
-                'message': f"Edge ({node1}, {node2}) already has relation '{existing_relation}'",
+                'message': (node1, existing_relation, node2),
             }
 
         else:
