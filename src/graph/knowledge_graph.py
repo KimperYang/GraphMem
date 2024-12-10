@@ -2,10 +2,9 @@ import networkx as nx
 from sentence_transformers import SentenceTransformer, util
 import matplotlib.pyplot as plt
 import pdb
-import re
-
+import random
 import datetime
-
+import os
 class SemanticKnowledgeGraph:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.graph = nx.DiGraph()
@@ -161,19 +160,24 @@ class SemanticKnowledgeGraph:
                 return []
     
     def draw(self,file_name="graph.png"):
-        pos = nx.shell_layout(self.graph)
+        pos = nx.spring_layout(self.graph)
         plt.figure(figsize=(12, 12))
-        nx.draw(self.graph, pos, with_labels=True, node_size=600, font_size=16)
+        
+        node_colors = [f'#{random.randint(0xAAAAAA, 0xFFFFFF):06x}' for _ in range(len(self.graph.nodes))]
+        
+        nx.draw(self.graph, pos, with_labels=True, node_size=600, font_size=16, node_color=node_colors)
         edge_labels = nx.get_edge_attributes(self.graph, 'relation')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
 
         current_time = datetime.datetime.now()
         time_str = current_time.strftime("%Y%m%d-%H%M%S")
 
-        dump_path = "figs/"+time_str+"_"+file_name
+        dump_path = "figs/" + time_str + "_" + file_name
+        if not os.path.exists("figs"):
+            os.makedirs("figs")
         print(f"Graph picture dumped to {dump_path}")
         plt.savefig(dump_path)
-    
+        
 if __name__ == "__main__":
     kg = SemanticKnowledgeGraph()
     kg.add_edge("A", "B", "cooperate")
