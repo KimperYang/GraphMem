@@ -21,7 +21,7 @@ class SemanticKnowledgeGraph:
         if input_node not in self.graph.nodes:
             for node in self.graph.nodes:
                 try:
-                    if util.cos_sim(embedding, self.graph.nodes[node]['embedding']).item() > 0.9:
+                    if util.cos_sim(embedding, self.graph.nodes[node]['embedding']).item() > 0.8:
                         return {
                             'node': node,
                             'message': f"Node '{input_node}' already exists with similar embedding"}
@@ -81,7 +81,10 @@ class SemanticKnowledgeGraph:
 
         if node1 is None:
             # Given node2 and relation, find node1
-            query_node2_emb = self.graph.nodes[node2]['embedding']
+            if node2 in self.graph.nodes:
+                query_node2_emb = self.graph.nodes[node2]['embedding']
+            else:
+                query_node2_emb = self.model.encode(node2)
             query_relation_emb = self.model.encode(relation)
             for n1 in self.graph.predecessors(node2):
                 n1_emb = self.graph.nodes[n1]['embedding']
@@ -100,7 +103,10 @@ class SemanticKnowledgeGraph:
 
         elif node2 is None:
             # Given node1 and relation, find node2
-            query_node1_emb = self.graph.nodes[node1]['embedding']
+            if node1 in self.graph.nodes:
+                query_node1_emb = self.graph.nodes[node1]['embedding']
+            else:
+                query_node1_emb = self.model.encode(node1)
             query_relation_emb = self.model.encode(relation)
             for n2 in self.graph.successors(node1):
                 n2_emb = self.graph.nodes[n2]['embedding']
@@ -127,13 +133,14 @@ class SemanticKnowledgeGraph:
                 return []
     
     def draw(self,file_name="graph.png"):
-        pos = nx.spring_layout(self.graph)
-        nx.draw(self.graph, pos, with_labels=True)
+        pos = nx.shell_layout(self.graph)
+        nx.draw(self.graph, pos, with_labels=True, node_size=300, font_size=8)
         edge_labels = nx.get_edge_attributes(self.graph, 'relation')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
         plt.savefig(file_name)
         #clear the plot
         plt.clf()
+        
     
 if __name__ == "__main__":
     kg = SemanticKnowledgeGraph()

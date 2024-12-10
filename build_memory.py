@@ -104,7 +104,6 @@ def parse_llm_judge_response(response: str) -> bool:
         raise ValueError("LLM response does not contain a valid 'Cover:' line.")
 
 def main():
-
     data_path = 'data/data.json'
     with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
