@@ -138,11 +138,11 @@ def main():
             extracted_q = extract_triplets(process_question(f"{question}"))
             for q in extracted_q:
                 if "Unknown" in q[0]:
-                    print(kg.query(node1=None, node2=q[1], node3=q[3], top_k=5))
+                    print(kg.query(node1=None, node2=q[1], relation=q[2], top_k=5))
                 elif "Unknown" in q[1]:
-                    print(kg.query(node1=q[0], node2=None, node3=q[3], top_k=5))
+                    print(kg.query(node1=q[0], node2=None, relation=q[2], top_k=5))
                 elif "Unknown" in q[2]:
-                    print(kg.query(node1=q[0], node2=q[1], node3=None, top_k=5))
+                    print(kg.query(node1=q[0], node2=q[1], relation=None, top_k=5))
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
 if __name__ == "__main__":

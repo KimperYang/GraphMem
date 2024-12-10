@@ -85,10 +85,23 @@ class SemanticKnowledgeGraph:
                 query_node2_emb = self.graph.nodes[node2]['embedding']
             else:
                 query_node2_emb = self.model.encode(node2)
+                match_score = 0
+                for n in self.graph.nodes:
+                    n_emb = self.graph.nodes[n]['embedding']
+                    score = util.cos_sim(n_emb, query_node2_emb).item()
+                    if score > match_score:
+                        match_score = score
+                        node2 = n
+                    
             query_relation_emb = self.model.encode(relation)
-            for n1 in self.graph.predecessors(node2):
+            for n1 in self.graph:
+                if n1 == node2:
+                    continue
                 n1_emb = self.graph.nodes[n1]['embedding']
-                rel_emb = self.graph[n1][node2]['relation_embedding']
+                if not self.graph.has_edge(n1, node2):
+                    rel_emb = query_relation_emb * 0
+                else:
+                    rel_emb = self.graph[n1][node2]['relation_embedding']
 
                 node_score = util.cos_sim(n1_emb, query_node2_emb).item()
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
@@ -107,10 +120,25 @@ class SemanticKnowledgeGraph:
                 query_node1_emb = self.graph.nodes[node1]['embedding']
             else:
                 query_node1_emb = self.model.encode(node1)
+                # find the most similar node in the graph
+                match_score = 0
+                for n in self.graph.nodes:
+                    n_emb = self.graph.nodes[n]['embedding']
+                    score = util.cos_sim(n_emb, query_node1_emb).item()
+                    if score > match_score:
+                        match_score = score
+                        node1 = n
+                    
             query_relation_emb = self.model.encode(relation)
-            for n2 in self.graph.successors(node1):
+            
+            for n2 in self.graph:
+                if n2 == node1:
+                    continue
                 n2_emb = self.graph.nodes[n2]['embedding']
-                rel_emb = self.graph[node1][n2]['relation_embedding']
+                if not self.graph.has_edge(node1, n2):
+                    rel_emb = query_node1_emb * 0
+                else:
+                    rel_emb = self.graph[node1][n2]['relation_embedding']
 
                 node_score = util.cos_sim(n2_emb, query_node1_emb).item()
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
@@ -134,7 +162,8 @@ class SemanticKnowledgeGraph:
     
     def draw(self,file_name="graph.png"):
         pos = nx.shell_layout(self.graph)
-        nx.draw(self.graph, pos, with_labels=True, node_size=300, font_size=8)
+        plt.figure(figsize=(12, 12))
+        nx.draw(self.graph, pos, with_labels=True, node_size=600, font_size=16)
         edge_labels = nx.get_edge_attributes(self.graph, 'relation')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
 
