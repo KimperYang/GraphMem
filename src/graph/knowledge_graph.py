@@ -20,13 +20,10 @@ class SemanticKnowledgeGraph:
 
         if input_node not in self.graph.nodes:
             for node in self.graph.nodes:
-                try:
-                    if util.cos_sim(embedding, self.graph.nodes[node]['embedding']).item() > 0.8:
-                        return {
-                            'node': node,
-                            'message': f"Node '{input_node}' already exists with similar embedding"}
-                except:
-                    pdb.set_trace()   
+                if util.cos_sim(embedding, self.graph.nodes[node]['embedding']).item() > 0.8:
+                    return {
+                        'node': node,
+                        'message': f"Node '{input_node}' already exists with similar embedding"}
                          
             self.graph.add_node(input_node, embedding=embedding)
             
@@ -45,6 +42,7 @@ class SemanticKnowledgeGraph:
         quote_chars = "‘’“”\"'"
         node1 = node1.strip(quote_chars)
         node2 = node2.strip(quote_chars)
+        relation = relation.strip(quote_chars)
 
         node1 = self.add_node(node1)['node']
         node2 = self.add_node(node2)['node']
