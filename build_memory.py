@@ -6,7 +6,7 @@ from src.graph.knowledge_graph import SemanticKnowledgeGraph
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
     sys_trip = """
-    You are an assistant who extract information in daily dialog sentences. Extract the triplets which contains the knowledge of the sentence.\nHere are two examples.
+    You are an assistant who extract information in daily dialog sentences. Extract the triplets (Subject, Relation, Subject) which contains the knowledge of the sentence.\nHere are two examples.
 
     For sentence: "Jack: Hi! I just passed my final exam.", the extracted triplets should be ("Jack", "passed", "final exam")
     For sentence: "Alice: Hi Bob, do you want to come to my 24 year old birthday party tomorrow?", the extracted triplets should be ("Bob", "invited", "Alice's birthday party"),("Alice", "24", "age")
@@ -49,6 +49,28 @@ def reflection(old, new):
 
     return response
 
+def process_question(question):
+    sys_q = """
+    You are an assistant who extract information in daily dialog question. Extract the triplets which contains the knowledge of the sentence.
+    However, since this is a question, the triplet must be not complete in the forms like (Subject, Relation, Unknown), (Subject, Unknown, Subject), or (Unknown, Relation, Subject)
+    Here are two examples.
+
+    For sentence: "question asked by Carol: Do you know how old is Alice?", the extracted triplets should be ("Alice", "Unknown", "age")
+    For sentence: "question asked by Carol: John, where are you working right now?", the extracted triplets should be ("John", "work", "Unknown")
+
+    Use the Unknown in the triplets to refer to the entity which is questioned in the question. Do not include any other words except for the triplets in your response.
+    """
+
+    user = "Here is the sentence for you to extract triplets: "
+    messages = [
+        {"role": "system", "content": sys_q},
+        {"role": "system", "content": user + question}
+    ]
+
+    response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
+
+    return response
+
 def extract_triplets(input_str):
     # Find all occurrences of triplets enclosed in parentheses
     # This will capture strings like: I, focus on, contemporary dance teaching
@@ -82,7 +104,6 @@ def parse_llm_judge_response(response: str) -> bool:
         raise ValueError("LLM response does not contain a valid 'Cover:' line.")
 
 def main():
-    kg = SemanticKnowledgeGraph()
 
     data_path = 'data/data.json'
     with open(data_path, "r", encoding="utf-8") as f:
@@ -108,8 +129,17 @@ def main():
         # TODO: Retrieve
         print("Queries:")
         for q in queries:
-            question = q.get("question asked by Carol", "")
-            print(f"Question: {question}")
-
+            question = q.get("question", "")
+            print(question)
+            extracted_q = extract_triplets(process_question(f"{question}"))
+            for q in extracted_q:
+                if "Unknown" in q[0]:
+                    print(kg.query(node1=None, node2=q[1], node3=q[3], top_k=5))
+                elif "Unknown" in q[1]:
+                    print(kg.query(node1=q[0], node2=None, node3=q[3], top_k=5))
+                elif "Unknown" in q[2]:
+                    print(kg.query(node1=q[0], node2=q[1], node3=None, top_k=5))
+                else:
+                    print(f"Warning: At least one unknown entity needed. {q}")
 if __name__ == "__main__":
     main()
