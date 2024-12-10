@@ -1,19 +1,53 @@
 import networkx as nx
 from sentence_transformers import SentenceTransformer, util
 import matplotlib.pyplot as plt
+import pdb
+import re
+
 class SemanticKnowledgeGraph:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.graph = nx.DiGraph()
         self.model = SentenceTransformer(model_name)
 
-    def add_node(self, node):
-        if node not in self.graph:
-            embedding = self.model.encode(node)
-            self.graph.add_node(node, embedding=embedding)
+    def add_node(self, input_node):
 
+        print(input_node)
+        
+        if input_node[0] == "'" or input_node[0] == '"':
+            pdb.set_trace()
+            
+        embedding = self.model.encode(input_node)
+
+        if input_node not in self.graph.nodes:
+            for node in self.graph.nodes:
+                try:
+                    if util.cos_sim(embedding, self.graph.nodes[node]['embedding']).item() > 0.9:
+                        return {
+                            'node': node,
+                            'message': f"Node '{input_node}' already exists with similar embedding"}
+                except:
+                    pdb.set_trace()   
+                         
+            self.graph.add_node(input_node, embedding=embedding)
+            
+            return {
+                'node': input_node,
+                'message': f"Added node '{input_node}'"
+            }
+            
+        else:
+            return {
+                'node': input_node,
+                'message': f"Node '{input_node}' already exists"
+            }
+            
     def add_edge(self, node1, node2, relation, overwrite=False):
-        self.add_node(node1)
-        self.add_node(node2)
+        quote_chars = "‘’“”\"'"
+        node1 = node1.strip(quote_chars)
+        node2 = node2.strip(quote_chars)
+
+        node1 = self.add_node(node1)['node']
+        node2 = self.add_node(node2)['node']
 
         relation_embedding = self.model.encode(relation)
 
@@ -98,6 +132,8 @@ class SemanticKnowledgeGraph:
         edge_labels = nx.get_edge_attributes(self.graph, 'relation')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
         plt.savefig(file_name)
+        #clear the plot
+        plt.clf()
     
 if __name__ == "__main__":
     kg = SemanticKnowledgeGraph()

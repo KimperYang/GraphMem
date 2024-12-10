@@ -121,10 +121,15 @@ def main():
                     extracted_mems = extract_triplets(get_triplet(f"{person}: {text}"))
                     for mem in extracted_mems:
                         res = kg.add_edge(mem[0], mem[2], mem[1], False)
-                        if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
-                            kg.add_edge(mem[0], mem[2], mem[1], True)
+                        try:
+                            if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
+                                kg.add_edge(mem[0], mem[2], mem[1], True)
+                        except ValueError as e:
+                            print(f"Error: {e}")
+                            continue
         
         kg.draw()
+        print(kg.graph.nodes)
         # kg.dump()
         # TODO: Retrieve
         print("Queries:")
