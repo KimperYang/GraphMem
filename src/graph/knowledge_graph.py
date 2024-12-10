@@ -1,6 +1,8 @@
 import networkx as nx
 from sentence_transformers import SentenceTransformer, util
 import matplotlib.pyplot as plt
+import datetime
+
 class SemanticKnowledgeGraph:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
         self.graph = nx.DiGraph()
@@ -97,7 +99,13 @@ class SemanticKnowledgeGraph:
         nx.draw(self.graph, pos, with_labels=True)
         edge_labels = nx.get_edge_attributes(self.graph, 'relation')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=edge_labels)
-        plt.savefig(file_name)
+
+        current_time = datetime.datetime.now()
+        time_str = current_time.strftime("%Y%m%d-%H%M%S")
+
+        dump_path = "figs/"+time_str+"_"+file_name
+        print(f"Graph picture dumped to {dump_path}")
+        plt.savefig(dump_path)
     
 if __name__ == "__main__":
     kg = SemanticKnowledgeGraph()
