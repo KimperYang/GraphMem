@@ -3,6 +3,7 @@ import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
 import pdb
+from tqdm import tqdm
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
     sys_trip = """
@@ -74,7 +75,7 @@ def process_question(question):
 def get_agent_response(retrieved, question):
     sys_r = """
     You are an assistant who answer daily dialog questions with some of your previous memories.
-    The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Unknown).
+    The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Subject).
     """
     for i in range(len(retrieved)):
         retrieved[i] = str(retrieved[i])
@@ -93,7 +94,7 @@ def get_agent_response(retrieved, question):
     ]
 
     response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
-
+    print(response)
     return response
 
 def llm_judge(question, g_answer, response):
@@ -181,27 +182,35 @@ def main():
                             continue
         
         kg.draw()
-        for q in queries:
-            question = q.get("question", "")
-            g_answer = q.get("answer", "")
-            print(question, g_answer)
-            total_num += 1
-            extracted_q = extract_triplets(process_question(f"{question}"))
-            for q in extracted_q:
-                retrieved = []
-                if "Unknown" in q[0]:
-                    retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
-                elif "Unknown" in q[1]:
-                    retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=5)
-                elif "Unknown" in q[2]:
-                    retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=5)
-                else:
-                    print(f"Warning: At least one unknown entity needed. {q}")
-                
-            print(question, extracted_q)
-            print(retrieved)
-            if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
-                correct_num += 1
-
+        for query in queries:
+            try:
+                question = query.get("question", "")
+                g_answer = query.get("answer", "")
+                print(question, g_answer)
+                total_num += 1
+                extracted_q = extract_triplets(process_question(f"{question}"))
+                for q in tqdm(extracted_q):
+                    retrieved = []
+                    if "Unknown" in q[0]:
+                        retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
+                    elif "Unknown" in q[1]:
+                        retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=5)
+                    elif "Unknown" in q[2]:
+                        retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=5)
+                    else:
+                        print(f"Warning: At least one unknown entity needed. {q}")
+                    
+                print(question, extracted_q)
+                print(retrieved)
+                if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
+                    correct_num += 1
+                    
+                print(f"Total number of questions: {total_num}")
+                print(f"Number of correct answers: {correct_num}")
+                print(f"Accuracy: {correct_num/total_num}")
+            except Exception as e:
+                print(f"Error: {e}")
+                continue
+    
 if __name__ == "__main__":
     main()
