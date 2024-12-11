@@ -74,8 +74,9 @@ def process_question(question):
 
 def get_agent_response(retrieved, question):
     sys_r = """
-    You are an assistant who answer daily dialog questions with some of your previous memories.
-    The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Subject).
+    **Role:** You are an assistant answering daily dialog questions based on provided memory triplets `(Subject, Relation, Object)`. These triplets are sorted by relevance (most important first).
+
+    **Instructions:** You may need to infer the answer if it’s not explicitly stated in the triplets. After considering the information and making any necessary logical deductions, directly provide the final answer. If you cannot determine an answer, give a random answer based on the list.
     """
     for i in range(len(retrieved)):
         retrieved[i] = str(retrieved[i])
@@ -161,7 +162,6 @@ def main():
 
     total_num = 0
     correct_num = 0
-
     # Build Graph
     for entry in data:
         kg = SemanticKnowledgeGraph()
@@ -182,6 +182,7 @@ def main():
                             continue
         
         kg.draw()
+        
         for query in queries:
             try:
                 question = query.get("question", "")
@@ -189,7 +190,7 @@ def main():
                 print(question, g_answer)
                 total_num += 1
                 extracted_q = extract_triplets(process_question(f"{question}"))
-                for q in tqdm(extracted_q):
+                for q in extracted_q:
                     retrieved = []
                     if "Unknown" in q[0]:
                         retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
