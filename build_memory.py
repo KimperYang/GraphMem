@@ -168,7 +168,6 @@ def main():
 
     total_num = 0
     correct_num = 0
-
     # Build Graph
     for entry in data:
         kg = SemanticKnowledgeGraph()
@@ -189,6 +188,7 @@ def main():
                             continue
         
         kg.draw()
+        
         for query in queries:
             try:
                 question = query.get("question", "")
@@ -196,7 +196,7 @@ def main():
                 print(question, g_answer)
                 total_num += 1
                 extracted_q = extract_triplets(process_question(f"{question}"))
-                for q in tqdm(extracted_q):
+                for q in extracted_q:
                     retrieved = []
                     if "Unknown" in q[0]:
                         retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
