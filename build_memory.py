@@ -14,11 +14,11 @@ def get_triplet(memory):
     Your response triplets should strictly follow the format: (Subject, Relation, Subject). Note that a sentence may include information of multiple triplets, and you need to divide them with comma and no extra space in your response. Do not include any other words except for the triplets in your response.
     """
 
-    user = "Here is the sentence for you to extract triplets: "
+    user = f"Here is the sentence for you to extract triplets: {memory}"
 
     messages = [
         {"role": "system", "content": sys_trip},
-        {"role": "system", "content": user + memory}
+        {"role": "user", "content": user}
     ]
 
     response = completion_with_backoff_mcopenai(messages = messages, temperature = 0.5, max_tokens=50).choices[0].message.content
@@ -42,7 +42,7 @@ def reflection(old, new):
 
     messages = [
         {"role": "system", "content": sys_ref},
-        {"role": "system", "content": prompt_template}
+        {"role": "user", "content": prompt_template}
     ]
 
     response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
@@ -61,10 +61,58 @@ def process_question(question):
     Use the Unknown in the triplets to refer to the entity which is questioned in the question. Do not include any other words except for the triplets in your response.
     """
 
-    user = "Here is the sentence for you to extract triplets: "
+    user = f"Here is the sentence for you to extract triplets: {question}"
     messages = [
         {"role": "system", "content": sys_q},
-        {"role": "system", "content": user + question}
+        {"role": "user", "content": user}
+    ]
+
+    response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
+
+    return response
+
+def get_agent_response(retrieved, question):
+    sys_r = """
+    You are an assistant who answer daily dialog questions with some of your previous memories.
+    The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Unknown).
+    """
+
+    retrieved = "\n".join(retrieved)
+
+    user = f"""
+    Your retrieved memories:{retrieved}.
+
+    {question}
+    """
+
+    messages = [
+        {"role": "system", "content": sys_r},
+        {"role": "user", "content": user}
+    ]
+
+    response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
+
+    return response
+
+def llm_judge(question, g_answer, response):
+    sys_judge = """
+    You are an assistant who judge the answer of a question from another assistant. 
+    You will be given the question, the ground truth answer, and the assistant's response.
+    """
+
+    user = f"""
+    Question: {question}
+    Ground truth answer: {g_answer}
+    Assistant's response: {response}
+
+    - If the you think his response is correct, print exactly: "Cover: True"
+    - If the you think his response is not correct, print exactly: "Cover: False"
+
+    Explain your reasoning in a short sentence before your final answer.
+    """
+    messages = [
+        {"role": "system", "content": sys_judge},
+        {"role": "user", "content": user}
     ]
 
     response = completion_with_backoff_mcopenai(messages = messages, temperature = 0, max_tokens=50).choices[0].message.content
@@ -92,7 +140,6 @@ def extract_triplets(input_str):
             # it doesn't match the expected triplet format.
             print(f"Warning: Invalid triplet format encountered. {parts}")
             return []
-    print(triplets)
     return triplets
 
 def parse_llm_judge_response(response: str) -> bool:
@@ -107,6 +154,9 @@ def main():
     data_path = 'data/data.json'
     with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
+
+    total_num = 0
+    correct_num = 0
 
     # Build Graph
     for entry in data:
@@ -128,22 +178,31 @@ def main():
                             continue
         
         kg.draw()
-        print(kg.graph.nodes)
+        # print(kg.graph.nodes)
         # kg.dump()
-        # TODO: Retrieve
-        print("Queries:")
+        
         for q in queries:
             question = q.get("question", "")
-            print(question)
+            g_answer = q.get("answer", "")
+            print(question, g_answer)
+            total_num += 1
             extracted_q = extract_triplets(process_question(f"{question}"))
+
             for q in extracted_q:
+                retrieved = []
                 if "Unknown" in q[0]:
-                    print(kg.query(node1=None, node2=q[1], relation=q[2], top_k=5))
+                    retrieved.append(kg.query(node1=None, node2=q[1], relation=q[2], top_k=5))
                 elif "Unknown" in q[1]:
-                    print(kg.query(node1=q[0], node2=None, relation=q[2], top_k=5))
+                    retrieved.append(kg.query(node1=q[0], node2=None, relation=q[2], top_k=5))
                 elif "Unknown" in q[2]:
-                    print(kg.query(node1=q[0], node2=q[1], relation=None, top_k=5))
+                    retrieved.append(kg.query(node1=q[0], node2=q[1], relation=None, top_k=5))
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
+
+            print(question, extracted_q)
+            print(retrieved)
+            if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
+                correct_num += 1
+
 if __name__ == "__main__":
     main()

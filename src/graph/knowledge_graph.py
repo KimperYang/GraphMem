@@ -12,7 +12,7 @@ class SemanticKnowledgeGraph:
 
     def add_node(self, input_node):
 
-        print(input_node)
+        # print(input_node)
         
         if input_node[0] == "'" or input_node[0] == '"':
             pdb.set_trace()
