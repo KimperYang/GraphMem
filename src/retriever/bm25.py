@@ -113,9 +113,9 @@ class BM25Retriever:
         doc_scores.sort(key=lambda x: x[1][1], reverse=True)
         
         # Return top-k results
-        results = [(i, doc, score) for i, (doc, score) in doc_scores[:top_k]]
+        # results = [(i, doc, score) for i, (doc, score) in doc_scores[:top_k]]
+        results = [doc for i, (doc, score) in doc_scores[:top_k]]
         return results
-
 
 if __name__ == "__main__":
     # Example usage

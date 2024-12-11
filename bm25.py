@@ -1,5 +1,6 @@
 import json
 import re
+import time
 from src.openai.query import completion_with_backoff_mcopenai
 from src.retriever.bm25 import BM25Retriever
 
@@ -69,9 +70,11 @@ def main():
 
     total_num = 0
     correct_num = 0
+    total_time = 0
 
     # Build Graph
-    for entry in data:
+    for idx in range(20):
+        entry = data[idx]
 
         memories = entry.get("memories", {})
         queries = entry.get("queries", [])
@@ -91,13 +94,21 @@ def main():
             print(question, g_answer)
             total_num += 1
 
-            retrieved = retriever.retrieve(question, top_k=5)
+            retrieved = retriever.retrieve(question, top_k=3)
             print(question, retrieved)
-            if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
-                correct_num += 1
-        
-            
 
+            start_time = time.time()
+            response = get_agent_response(retrieved, question)
+            end_time = time.time()
+            total_time += end_time - start_time
+
+            if parse_llm_judge_response(llm_judge(question, g_answer, response)):
+                correct_num += 1
+            
+    print(f"Total number of questions: {total_num}")
+    print(f"Number of correct answers: {correct_num}")
+    print(f"Accuracy: {correct_num/total_num}")
+    print(f"Total time: {total_time}")
 
 if __name__ == "__main__":
     main()
