@@ -36,7 +36,7 @@ class SemanticKnowledgeGraph:
                 'message': f"Node '{input_node}' already exists"
             }
             
-    def add_edge(self, node1, node2, relation, overwrite=False):
+    def add_edge(self, node1, relation, node2, overwrite=False):
         quote_chars = "‘’“”\"'"
         node1 = node1.strip(quote_chars)
         node2 = node2.strip(quote_chars)
@@ -69,7 +69,7 @@ class SemanticKnowledgeGraph:
                 'message': f"Added edge ({node1}, {node2}) with relation '{relation}'",
             }
 
-    def query(self, node1=None, node2=None, relation=None, top_k=1):
+    def query(self, node1=None, relation=None, node2=None, top_k=1):
         assert (node1 is None) + (node2 is None) + (relation is None) == 1, "Only one element of the triplet can be None during query"
 
         matches = []
@@ -104,8 +104,10 @@ class SemanticKnowledgeGraph:
                 node_score = util.cos_sim(n1_emb, query_node2_emb).item()
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
-
-                matches.append((n1, node2, self.graph[n1][node2]['relation']))
+                if self.graph.has_edge(n1, node2):
+                    matches.append((n1, self.graph[n1][node2]['relation'], node2))
+                else:
+                    matches.append((n1, relation, node2))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
@@ -141,12 +143,15 @@ class SemanticKnowledgeGraph:
                 node_score = util.cos_sim(n2_emb, query_node1_emb).item()
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
-
-                matches.append((node1, n2, self.graph[node1][n2]['relation']))
+                if self.graph.has_edge(node1, n2):
+                    matches.append((node1, self.graph[node1][n2]['relation'], n2))
+                else:
+                    matches.append((node1, relation, n2))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
             top_k_nodes = [matches[i] for i in top_indices]
+            
             return top_k_nodes
 
         else:
@@ -181,16 +186,15 @@ class SemanticKnowledgeGraph:
             
             else:
                 #find the most similar relation in the graph
-                score_list = []
                 for i in self.graph.nodes:
                     if not self.graph.has_edge(node1, i):
                         continue
                     node_embedding = self.graph.nodes[i]['embedding']
                     score = util.cos_sim(node_embedding, query_node2_emb).item()
-                    score_list.append((i, score))
-                score_list.sort(key=lambda x: x[1], reverse=True)
-                top_indices = sorted(range(len(score_list)), key=lambda i: score_list[i][1], reverse=True)[:top_k]
-                top_k_nodes = [(node1, score_list[i][0], self.graph[node1][score_list[i][0]]['relation']) for i in top_indices]
+                    scores.append(score)
+                    matches.append((node1, self.graph[node1][i]['relation'], i))
+                top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
+                top_k_nodes = [matches[i] for i in top_indices]
                 return top_k_nodes
                 
             

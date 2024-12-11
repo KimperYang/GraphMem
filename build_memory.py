@@ -2,7 +2,7 @@ import json
 import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
-
+import pdb
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
     sys_trip = """
@@ -150,6 +150,7 @@ def parse_llm_judge_response(response: str) -> bool:
     if match:
         return match.group(1) == "True"
     else:
+        print(response)
         raise ValueError("LLM response does not contain a valid 'Cover:' line.")
 
 def main():
@@ -171,33 +172,29 @@ def main():
                 for person, text in message.items():
                     extracted_mems = extract_triplets(get_triplet(f"{person}: {text}"))
                     for mem in extracted_mems:
-                        res = kg.add_edge(mem[0], mem[2], mem[1], False)
+                        res = kg.add_edge(mem[0], mem[1], mem[2], False)
                         try:
                             if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
-                                kg.add_edge(mem[0], mem[2], mem[1], True)
+                                kg.add_edge(mem[0], mem[1], mem[2], True)
                         except ValueError as e:
                             print(f"Error: {e}")
                             continue
         
         kg.draw()
-        # print(kg.graph.nodes)
-        # kg.dump()
-        
         for q in queries:
             question = q.get("question", "")
             g_answer = q.get("answer", "")
             print(question, g_answer)
             total_num += 1
             extracted_q = extract_triplets(process_question(f"{question}"))
-
             for q in extracted_q:
                 retrieved = []
                 if "Unknown" in q[0]:
-                    retrieved += kg.query(node1=None, node2=q[1], relation=q[2], top_k=5)
+                    retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
                 elif "Unknown" in q[1]:
-                    retrieved += kg.query(node1=q[0], node2=None, relation=q[2], top_k=5)
+                    retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=5)
                 elif "Unknown" in q[2]:
-                    retrieved += kg.query(node1=q[0], node2=q[1], relation=None, top_k=5)
+                    retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=5)
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
                 
