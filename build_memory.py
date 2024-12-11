@@ -2,7 +2,6 @@ import json
 import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
-import pdb
 
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
@@ -77,6 +76,8 @@ def get_agent_response(retrieved, question):
     You are an assistant who answer daily dialog questions with some of your previous memories.
     The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Unknown).
     """
+    for i in range(len(retrieved)):
+        retrieved[i] = str(retrieved[i])
 
     retrieved = "\n".join(retrieved)
 
@@ -192,14 +193,14 @@ def main():
             for q in extracted_q:
                 retrieved = []
                 if "Unknown" in q[0]:
-                    retrieved.append(kg.query(node1=None, node2=q[1], relation=q[2], top_k=5))
+                    retrieved += kg.query(node1=None, node2=q[1], relation=q[2], top_k=5)
                 elif "Unknown" in q[1]:
-                    retrieved.append(kg.query(node1=q[0], node2=None, relation=q[2], top_k=5))
+                    retrieved += kg.query(node1=q[0], node2=None, relation=q[2], top_k=5)
                 elif "Unknown" in q[2]:
-                    retrieved.append(kg.query(node1=q[0], node2=q[1], relation=None, top_k=5))
+                    retrieved += kg.query(node1=q[0], node2=q[1], relation=None, top_k=5)
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
-
+                
             print(question, extracted_q)
             print(retrieved)
             if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
