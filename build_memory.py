@@ -73,19 +73,26 @@ def process_question(question):
     return response
 
 def get_agent_response(retrieved, question):
+
     sys_r = """
-    You are an assistant who answer daily dialog questions with some of your previous memories.
-    The retrieved memories are in the form of a knowledge triplets like (Subject, Relation, Subject).
+    You are an assistant who answer questions based on your previous knowledge.
+    Your knowledge are in the form of some triplets like (Subject, Relation, Subject). Here are two examples.
+    
+    For the triplet, ("Alice", "Study", "Biology"), the corresponding knowledge is Alice is studying Biology.
+    For the triplet, ("Bob", "24", "age"), the corresponding knowledge is Bob is 24 years old. 
+
+    You need to answer the question based on these knowledge triplets.
     """
+
     for i in range(len(retrieved)):
         retrieved[i] = str(retrieved[i])
 
     retrieved = "\n".join(retrieved)
 
     user = f"""
-    Your retrieved memories:{retrieved}.
+    Knowledge triplets:{retrieved}.
 
-    {question}
+    Question: {question}
     """
 
     messages = [
