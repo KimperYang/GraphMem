@@ -75,13 +75,17 @@ def process_question(question):
 def get_agent_response(retrieved, question):
 
     sys_r = """
-    You are an assistant who answer questions based on your previous knowledge.
-    Your knowledge are in the form of some triplets like (Subject, Relation, Subject). Here are two examples.
-    
-    For the triplet, ("Alice", "Study", "Biology"), the corresponding knowledge is Alice is studying Biology.
-    For the triplet, ("Bob", "24", "age"), the corresponding knowledge is Bob is 24 years old. 
+    Here’s the merged version of the two prompts:
 
-    You need to answer the question based on these knowledge triplets.
+    ---
+
+    **Role:** You are an assistant answering daily dialog questions based on provided memory triplets `(Subject, Relation, Object)`. These triplets represent your knowledge in a structured format. For example, the triplet `("Alice", "Study", "Biology")` means Alice is studying Biology, and `("Bob", "24", "age")` means Bob is 24 years old.
+
+    **Instructions:**  
+    - Answer questions based on these triplets, which are sorted by relevance (most important first).  
+    - If the answer is not explicitly stated, infer the answer by making logical deductions based on the triplets.  
+    - If you cannot determine an answer, provide a reasonable random answer based on the triplets.  
+    - Directly provide the final answer without explaining your reasoning unless explicitly asked.
     """
 
     for i in range(len(retrieved)):
