@@ -11,9 +11,6 @@ class SemanticKnowledgeGraph:
         self.model = SentenceTransformer(model_name)
 
     def add_node(self, input_node):
-
-        print(input_node)
-        
         if input_node[0] == "'" or input_node[0] == '"':
             pdb.set_trace()
             
@@ -106,11 +103,11 @@ class SemanticKnowledgeGraph:
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
 
-                matches.append(n1)
+                matches.append((n1,node2,self.graph[n1][node2]['relation']))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
-            top_k_nodes = [(matches[i], scores[i]) for i in top_indices]
+            top_k_nodes = [matches[i] for i in top_indices]
             return top_k_nodes
 
         elif node2 is None:
@@ -143,22 +140,58 @@ class SemanticKnowledgeGraph:
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
 
-                matches.append(n2)
+                matches.append((node1,n2,self.graph[node1][n2]['relation']))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
-            top_k_nodes = [(matches[i], scores[i]) for i in top_indices]
+            top_k_nodes = [matches[i] for i in top_indices]
             return top_k_nodes
 
         else:
+            
+            if node1 in self.graph.nodes:
+                query_node1_emb = self.graph.nodes[node1]['embedding']
+            else:
+                query_node1_emb = self.model.encode(node1)
+                match_score = 0
+                for n in self.graph.nodes:
+                    n_emb = self.graph.nodes[n]['embedding']
+                    score = util.cos_sim(n_emb, query_node1_emb).item()
+                    if score > match_score:
+                        match_score = score
+                        node1 = n
+                        
+            if node2 in self.graph.nodes:
+                query_node2_emb = self.graph.nodes[node2]['embedding']
+            else:
+                query_node2_emb = self.model.encode(node2)
+                match_score = 0
+                for n in self.graph.nodes:
+                    n_emb = self.graph.nodes[n]['embedding']
+                    score = util.cos_sim(n_emb, query_node2_emb).item()
+                    if score > match_score:
+                        match_score = score
+                        node2 = n
+                        
             # Given node1 and node2, find relation
             if self.graph.has_edge(node1, node2):
                 rel = self.graph[node1][node2]['relation']
-                total_score = 2.0
-                return [(rel, total_score)]
+                return [(node1,node2,rel)]
+            
             else:
-                return []
-    
+                #find the most similar relation in the graph
+                match_score = 0
+                for i in self.graph.nodes:
+                    if not self.graph.has_edge(node1, i):
+                        continue
+                    node_embedding = self.graph.nodes[i]['embedding']
+                    score = util.cos_sim(node_embedding, query_node2_emb).item()
+                    if score > match_score:
+                        match_score = score
+                        node2 = i
+                        rel = self.graph[node1][i]['relation']
+                return [(node1, node2, rel)]
+            
     def draw(self,file_name="graph.png"):
         pos = nx.spring_layout(self.graph)
         plt.figure(figsize=(12, 12))

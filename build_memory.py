@@ -2,6 +2,7 @@ import json
 import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
+import pdb
 
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
@@ -136,6 +137,7 @@ def main():
             question = q.get("question", "")
             print(question)
             extracted_q = extract_triplets(process_question(f"{question}"))
+            pdb.set_trace()
             for q in extracted_q:
                 if "Unknown" in q[0]:
                     print(kg.query(node1=None, node2=q[1], relation=q[2], top_k=5))
@@ -145,5 +147,6 @@ def main():
                     print(kg.query(node1=q[0], node2=q[1], relation=None, top_k=5))
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
+                    
 if __name__ == "__main__":
     main()
