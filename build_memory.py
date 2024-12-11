@@ -75,10 +75,6 @@ def process_question(question):
 def get_agent_response(retrieved, question):
 
     sys_r = """
-    Here’s the merged version of the two prompts:
-
-    ---
-
     **Role:** You are an assistant answering daily dialog questions based on provided memory triplets `(Subject, Relation, Object)`. These triplets represent your knowledge in a structured format. For example, the triplet `("Alice", "Study", "Biology")` means Alice is studying Biology, and `("Bob", "24", "age")` means Bob is 24 years old.
 
     **Instructions:**  
