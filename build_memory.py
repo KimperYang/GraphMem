@@ -200,7 +200,7 @@ def main():
                     retrieved += kg.query(node1=q[0], node2=q[1], relation=None, top_k=5)
                 else:
                     print(f"Warning: At least one unknown entity needed. {q}")
-                
+                print()
             print(question, extracted_q)
             print(retrieved)
             if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
