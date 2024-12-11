@@ -96,19 +96,13 @@ class SemanticKnowledgeGraph:
                     continue
                 
                 n1_emb = self.graph.nodes[n1]['embedding']
-                if not self.graph.has_edge(n1, node2):
-                    rel_emb = query_relation_emb * 0
-                else:
-                    rel_emb = self.graph[n1][node2]['relation_embedding']
-
-                node_score = util.cos_sim(n1_emb, query_node2_emb).item()
-                rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
-                total_score = node_score + rel_score
                 if self.graph.has_edge(n1, node2):
+                    rel_emb = self.graph[n1][node2]['relation_embedding']
+                    node_score = util.cos_sim(n1_emb, query_node2_emb).item()
+                    rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
+                    total_score = node_score + rel_score
                     matches.append((n1, self.graph[n1][node2]['relation'], node2))
-                else:
-                    matches.append((n1, relation, node2))
-                scores.append(total_score)
+                    scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
             top_k_nodes = [matches[i] for i in top_indices]
@@ -135,19 +129,13 @@ class SemanticKnowledgeGraph:
                 if n2 == node1:
                     continue
                 n2_emb = self.graph.nodes[n2]['embedding']
-                if not self.graph.has_edge(node1, n2):
-                    rel_emb = query_node1_emb * 0
-                else:
-                    rel_emb = self.graph[node1][n2]['relation_embedding']
-
-                node_score = util.cos_sim(n2_emb, query_node1_emb).item()
-                rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
-                total_score = node_score + rel_score
                 if self.graph.has_edge(node1, n2):
+                    rel_emb = self.graph[node1][n2]['relation_embedding']
+                    node_score = util.cos_sim(n2_emb, query_node1_emb).item()
+                    rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
+                    total_score = node_score + rel_score
                     matches.append((node1, self.graph[node1][n2]['relation'], n2))
-                else:
-                    matches.append((node1, relation, n2))
-                scores.append(total_score)
+                    scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
             top_k_nodes = [matches[i] for i in top_indices]
