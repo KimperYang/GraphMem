@@ -90,9 +90,11 @@ class SemanticKnowledgeGraph:
                         node2 = n
                     
             query_relation_emb = self.model.encode(relation)
+            
             for n1 in self.graph:
                 if n1 == node2:
                     continue
+                
                 n1_emb = self.graph.nodes[n1]['embedding']
                 if not self.graph.has_edge(n1, node2):
                     rel_emb = query_relation_emb * 0
@@ -103,7 +105,7 @@ class SemanticKnowledgeGraph:
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
 
-                matches.append((n1,node2,self.graph[n1][node2]['relation']))
+                matches.append((n1, node2, self.graph[n1][node2]['relation']))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
@@ -140,7 +142,7 @@ class SemanticKnowledgeGraph:
                 rel_score = util.cos_sim(rel_emb, query_relation_emb).item()
                 total_score = node_score + rel_score
 
-                matches.append((node1,n2,self.graph[node1][n2]['relation']))
+                matches.append((node1, n2, self.graph[node1][n2]['relation']))
                 scores.append(total_score)
 
             top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
@@ -148,7 +150,6 @@ class SemanticKnowledgeGraph:
             return top_k_nodes
 
         else:
-            
             if node1 in self.graph.nodes:
                 query_node1_emb = self.graph.nodes[node1]['embedding']
             else:
@@ -176,21 +177,22 @@ class SemanticKnowledgeGraph:
             # Given node1 and node2, find relation
             if self.graph.has_edge(node1, node2):
                 rel = self.graph[node1][node2]['relation']
-                return [(node1,node2,rel)]
+                return [(node1, node2, rel)]
             
             else:
                 #find the most similar relation in the graph
-                match_score = 0
+                score_list = []
                 for i in self.graph.nodes:
                     if not self.graph.has_edge(node1, i):
                         continue
                     node_embedding = self.graph.nodes[i]['embedding']
                     score = util.cos_sim(node_embedding, query_node2_emb).item()
-                    if score > match_score:
-                        match_score = score
-                        node2 = i
-                        rel = self.graph[node1][i]['relation']
-                return [(node1, node2, rel)]
+                    score_list.append((i, score))
+                score_list.sort(key=lambda x: x[1], reverse=True)
+                top_indices = sorted(range(len(score_list)), key=lambda i: score_list[i][1], reverse=True)[:top_k]
+                top_k_nodes = [(node1, score_list[i][0], self.graph[node1][score_list[i][0]]['relation']) for i in top_indices]
+                return top_k_nodes
+                
             
     def draw(self,file_name="graph.png"):
         pos = nx.spring_layout(self.graph)
