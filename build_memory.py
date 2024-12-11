@@ -2,6 +2,7 @@ import json
 import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
+import pdb
 
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
