@@ -4,6 +4,7 @@ from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
 import pdb
 from tqdm import tqdm
+import time
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
     sys_trip = """
@@ -168,29 +169,32 @@ def main():
 
     total_num = 0
     correct_num = 0
+    total_time = 0
     # Build Graph
-    for entry in data:
-        kg = SemanticKnowledgeGraph()
-        memories = entry.get("memories", {})
-        queries = entry.get("queries", [])
+    for idx in range(20):
+        try:
+            entry = data[idx]
+            kg = SemanticKnowledgeGraph()
+            memories = entry.get("memories", {})
+            queries = entry.get("queries", [])
 
-        for date, conversation_list in memories.items():
-            for message in conversation_list:
-                for person, text in message.items():
-                    extracted_mems = extract_triplets(get_triplet(f"{person}: {text}"))
-                    for mem in extracted_mems:
-                        res = kg.add_edge(mem[0], mem[1], mem[2], False)
-                        try:
-                            if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
-                                kg.add_edge(mem[0], mem[1], mem[2], True)
-                        except ValueError as e:
-                            print(f"Error: {e}")
-                            continue
-        
-        kg.draw()
-        
-        for query in queries:
-            try:
+            for date, conversation_list in memories.items():
+                for message in conversation_list:
+                    for person, text in message.items():
+                        extracted_mems = extract_triplets(get_triplet(f"{person}: {text}"))
+                        for mem in extracted_mems:
+                            res = kg.add_edge(mem[0], mem[1], mem[2], False)
+                            try:
+                                if res['conflict'] and parse_llm_judge_response(reflection(mem, res['message'])):
+                                    kg.add_edge(mem[0], mem[1], mem[2], True)
+                            except ValueError as e:
+                                print(f"Error: {e}")
+                                continue
+            
+            kg.draw()
+            
+            for query in queries:
+
                 question = query.get("question", "")
                 g_answer = query.get("answer", "")
                 print(question, g_answer)
@@ -209,15 +213,23 @@ def main():
                     
                 print(question, extracted_q)
                 print(retrieved)
-                if parse_llm_judge_response(llm_judge(question, g_answer, get_agent_response(retrieved, question))):
+                start_time = time.time()
+                response = get_agent_response(retrieved, question)
+                end_time = time.time()
+                total_time += end_time - start_time
+                if parse_llm_judge_response(llm_judge(question, g_answer, response)):
                     correct_num += 1
                     
                 print(f"Total number of questions: {total_num}")
                 print(f"Number of correct answers: {correct_num}")
                 print(f"Accuracy: {correct_num/total_num}")
-            except Exception as e:
-                print(f"Error: {e}")
-                continue
+                print(f"Average response time: {total_time}")
+                if total_num == 60:
+                    pdb.set_trace()
+                        
+        except Exception as e:
+            print(f"Error: {e}")
+            continue
     
 if __name__ == "__main__":
     main()
