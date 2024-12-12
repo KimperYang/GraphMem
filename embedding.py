@@ -1,7 +1,7 @@
 import json
 import re
 from src.openai.query import completion_with_backoff_mcopenai
-from src.retriever.bm25 import BM25Retriever
+from src.retriever.embedding import EmbeddingRetriever
 
 
 def get_agent_response(retrieved, question):
@@ -74,40 +74,38 @@ def main():
 
     total_num = 0
     correct_num = 0
+
     # Build Graph
     for idx in range(20):
-        try:
-            entry = data[idx]
+        
+        entry = data[idx]
 
-            memories = entry.get("memories", {})
-            queries = entry.get("queries", [])
+        memories = entry.get("memories", {})
+        queries = entry.get("queries", [])
 
-            extracted_mems = []
-            for date, conversation_list in memories.items():
-                for message in conversation_list:
-                    for person, text in message.items():
-                        extracted_mems.append(f"{person}: {text}")
+        extracted_mems = []
+        for date, conversation_list in memories.items():
+            for message in conversation_list:
+                for person, text in message.items():
+                    extracted_mems.append(f"{person}: {text}")
 
-            retriever = BM25Retriever()
-            retriever.fit(extracted_mems)
-            
-            for q in queries:
-                question = q.get("question", "")
-                g_answer = q.get("answer", "")
-                print(question, g_answer)
-                total_num += 1
+        retriever = EmbeddingRetriever()
+        retriever.fit(extracted_mems)
+        
+        for q in queries:
+            question = q.get("question", "")
+            g_answer = q.get("answer", "")
+            print(question, g_answer)
+            total_num += 1
 
-                retrieved = retriever.retrieve(question, top_k=1)
-                print(question, retrieved)
+            retrieved = retriever.retrieve(question, top_k=1)
+            print(question, retrieved)
 
-                response = get_agent_response(retrieved, question)
+            response = get_agent_response(retrieved, question)
 
-                if parse_llm_judge_response(llm_judge(question, g_answer, response)):
-                    correct_num += 1
+            if parse_llm_judge_response(llm_judge(question, g_answer, response)):
+                correct_num += 1
 
-        except Exception as e:
-            print(f"Error: {e}")
-            continue
 
     print(f"Total number of questions: {total_num}")
     print(f"Number of correct answers: {correct_num}")

@@ -3,8 +3,6 @@ import re
 from src.openai.query import completion_with_backoff_mcopenai
 from src.graph.knowledge_graph import SemanticKnowledgeGraph
 import pdb
-from tqdm import tqdm
-import time
 def get_triplet(memory):
     # kg = SemanticKnowledgeGraph()
     sys_trip = """
@@ -169,7 +167,6 @@ def main():
 
     total_num = 0
     correct_num = 0
-    total_time = 0
     # Build Graph
     for idx in range(20):
         try:
@@ -213,17 +210,13 @@ def main():
                     
                 print(question, extracted_q)
                 print(retrieved)
-                start_time = time.time()
                 response = get_agent_response(retrieved, question)
-                end_time = time.time()
-                total_time += end_time - start_time
                 if parse_llm_judge_response(llm_judge(question, g_answer, response)):
                     correct_num += 1
                     
                 print(f"Total number of questions: {total_num}")
                 print(f"Number of correct answers: {correct_num}")
                 print(f"Accuracy: {correct_num/total_num}")
-                print(f"Average response time: {total_time}")
                 if total_num == 60:
                     pdb.set_trace()
                         

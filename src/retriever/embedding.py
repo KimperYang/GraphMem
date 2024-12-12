@@ -112,64 +112,40 @@
 #         print(f"Document {i}: {doc} (Similarity score: {score:.4f})")
 
 import torch
-import torch.nn.functional as F
-from transformers import AutoModel
 from typing import List, Tuple
-import numpy as np
+from sentence_transformers import SentenceTransformer, util
+
+from typing import List, Tuple
+from sentence_transformers import SentenceTransformer, util
 
 class EmbeddingRetriever:
-    def __init__(self, model_name: str = 'nvidia/NV-Embed-v2', device: str = None):
-        self.device = device or ('cuda' if torch.cuda.is_available() else 'cpu')
-        self.embed_model = AutoModel.from_pretrained(model_name, trust_remote_code=True)
-        self.embed_model.to(self.device)
-        self.embed_model.eval()
-        
+    def __init__(self, model_name: str = 'all-MiniLM-L6-v2'):
+        self.embed_model = SentenceTransformer(model_name)
         self.documents = []
         self.embeddings = None
         
-    def _get_embedding(self, text: str) -> torch.Tensor:
-        with torch.no_grad():
-            embedding = self.embed_model.encode(
-                [text], 
-                instruction="", 
-                max_length=32768
-            )
-            # Normalize the embedding
-            embedding = F.normalize(embedding, p=2, dim=1)
-        return embedding
+    def _get_embedding(self, text: str):
+        return self.embed_model.encode(text, convert_to_tensor=True)
                     
     def fit(self, documents: List[str]):
-        """Process and store embeddings for documents"""
         self.documents = documents
-        embeddings_list = []
-        
-        for doc in documents:
-            embedding = self._get_embedding(doc)
-            embeddings_list.append(embedding)
-        
-        # Stack all embeddings into a single tensor [n_docs, embedding_dim]
-        self.embeddings = torch.cat(embeddings_list, dim=0)
+        self.embeddings = self.embed_model.encode(documents, convert_to_tensor=True)
     
     def retrieve(self, query: str, top_k: int = 1) -> List[Tuple[int, str, float]]:
-        """Retrieve top-k most similar documents"""
-        # Get query embedding [1, embedding_dim]
         query_embedding = self._get_embedding(query)
         
-        # Compute dot product between query and all documents
-        # This is equivalent to cosine similarity since vectors are normalized
-        similarities = torch.mm(query_embedding, self.embeddings.t()).squeeze(0)
-        
-        # Get top-k similar documents
+        similarities = util.cos_sim(query_embedding, self.embeddings)[0]
+
         top_k = min(top_k, len(self.documents))
-        top_scores, top_indices = torch.topk(similarities, k=top_k)
-        
-        # Prepare results
+        top_scores, top_indices = similarities.topk(k=top_k)
+
         results = [
-            (idx.item(), self.documents[idx.item()], score.item())
-            for idx, score in zip(top_indices, top_scores)
+            self.documents[idx.item()]
+            for idx in top_indices
         ]
         
         return results
+
 
 
 if __name__ == "__main__":
