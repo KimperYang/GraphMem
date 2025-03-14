@@ -39,7 +39,6 @@ def reflection(old, new):
             - If the new triplet updates, changes, or supersedes the old triplet, print exactly: "Cover: True"
             - If the new triplet does not affect the old one or there is no direct contradiction, print exactly: "Cover: False"
 
-            Explain your reasoning in a short sentence before your final answer.
             """
 
     messages = [
@@ -203,15 +202,19 @@ def main():
                 for q in extracted_q:
                     retrieved = []
                     if "Unknown" in q[0]:
-                        retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=3)
+                        retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=3,use_gnn=True,max_hops=2)
+
                     elif "Unknown" in q[1]:
-                        retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=3)
+                        retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=3,use_gnn=True,max_hops=5)
+                        
                     elif "Unknown" in q[2]:
-                        retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=3)
+                        retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=3,use_gnn=True,max_hops=2)
+                        
                     else:
                         print(f"Warning: At least one unknown entity needed. {q}")
                     
                 print(question, extracted_q)
+                print('--'*20)
                 print(retrieved)
                 start_time = time.time()
                 response = get_agent_response(retrieved, question)
