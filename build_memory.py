@@ -203,11 +203,11 @@ def main():
                 for q in extracted_q:
                     retrieved = []
                     if "Unknown" in q[0]:
-                        retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=5)
+                        retrieved += kg.query(node1=None, relation=q[1], node2=q[2],top_k=3)
                     elif "Unknown" in q[1]:
-                        retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=5)
+                        retrieved += kg.query(node1=q[0], relation=None, node2=q[2], top_k=3)
                     elif "Unknown" in q[2]:
-                        retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=5)
+                        retrieved += kg.query(node1=q[0], relation=q[1] ,node2=None, top_k=3)
                     else:
                         print(f"Warning: At least one unknown entity needed. {q}")
                     
@@ -224,8 +224,6 @@ def main():
                 print(f"Number of correct answers: {correct_num}")
                 print(f"Accuracy: {correct_num/total_num}")
                 print(f"Average response time: {total_time}")
-                if total_num == 60:
-                    pdb.set_trace()
                         
         except Exception as e:
             print(f"Error: {e}")
